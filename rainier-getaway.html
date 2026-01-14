@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainier Getaway - Luxury Mountain Retreat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #4a4a4a;
+            --accent: #c9a872;
+            --light: #f8f6f3;
+            --white: #ffffff;
+            --forest: #2d4a3e;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            color: var(--primary);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 1rem 5%;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.75);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 0.95rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5.5rem;
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.7s;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 1.25rem 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.9s;
+        }
+
+        .hero-cta:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stats Bar */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .stat {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-right: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 8rem 5%;
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin: 0 auto 5rem;
+            text-align: center;
+        }
+
+        .section-tag {
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--secondary);
+            font-weight: 300;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            z-index: 10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .feature h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .feature p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--secondary);
+            font-weight: 300;
+        }
+
+        /* Amenities Section */
+        .amenities {
+            background: var(--light);
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .amenity-category h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        .amenity-list {
+            list-style: none;
+        }
+
+        .amenity-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1rem;
+            color: var(--secondary);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .amenity-list li:last-child {
+            border-bottom: none;
+        }
+
+        .amenity-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        /* Highlight Section */
+        .highlight-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .highlight-image {
+            position: relative;
+            min-height: 600px;
+            overflow: hidden;
+        }
+
+        .highlight-image img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .highlight-content {
+            padding: 6rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--primary);
+            color: white;
+        }
+
+        .highlight-content .section-tag {
+            color: var(--accent);
+        }
+
+        .highlight-content .section-title {
+            color: white;
+        }
+
+        .highlight-content p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--forest);
+            color: white;
+            text-align: center;
+            padding: 8rem 5%;
+        }
+
+        .cta-section .section-title {
+            color: white;
+        }
+
+        .cta-section .section-description {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--forest);
+            padding: 1.25rem 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-top: 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 5rem 5% 3rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto 4rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;    
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-section h4 {
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .features-grid,
+            .amenities-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .highlight-section {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid,
+            .amenities-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 5rem 5%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="nav">
+        <div class="logo">Rainier Getaway</div>
+        <div class="nav-links">
+            <a href="#gallery">Gallery</a>
+            <a href="#amenities">Amenities</a>
+            <a href="#location">Location</a>
+            <a href="https://www.airbnb.com/h/rainiergetaway" target="_blank" class="nav-cta">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/20250907_171832.jpg" alt="Rainier Getaway Exterior" class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-subtitle">Mount Rainier National Park</div>
+            <h1>Your Mountain Escape Awaits</h1>
+            <p class="hero-description">Experience luxury and adventure in our fully-equipped mountain retreat. Sleeps 12 with premium amenities, private gym, game loft, and hot tub.</p>
+            <a href="https://www.airbnb.com/h/rainiergetaway" target="_blank" class="hero-cta">View Availability</a>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats">
+        <div class="stat">  
+            <div class="stat-number">12</div>
+            <div class="stat-label">Guests</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Bedrooms (6 beds)</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Bathrooms</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">10min</div>
+            <div class="stat-label">To Park Entrance</div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-tag">Why Choose Us</div>
+            <h2 class="section-title">Designed for Memorable Gatherings</h2>
+            <p class="section-description">Whether you're planning a family reunion, friend's retreat, or team getaway, our property offers everything you need for an unforgettable mountain experience.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🏔️</div>
+                <h3>Prime Location</h3>
+                <p>Just 10 minutes from Mt. Rainier National Park entrance with breathtaking mountain views.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <h3>Entertainment Hub</h3>
+                <p>Epic game loft with ping pong, air hockey, basketball, foosball, plus private gym and hot tub.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✨</div>
+                <h3>Premium Comfort</h3>
+                <p>Modern amenities meet rustic charm with exposed timber beams, gourmet kitchen, and luxurious furnishings.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="section-header">
+            <div class="section-tag">Gallery</div>
+            <h2 class="section-title">Explore the Space</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/20250907_194742.jpg" alt="Game Loft">
+            </div>
+            <div class="gallery-item">
+                <img src="images/20250906_223415.jpg" alt="Hot Tub">
+            </div>
+            <div class="gallery-item">
+                <img src="images/20251026_152047.jpg" alt="Dining Room">
+            </div>
+            <div class="gallery-item">
+                <img src="images/20250907_103724.jpg" alt="Kitchen">
+            </div>
+            <div class="gallery-item">  
+                <img src="images/20251005_194149.jpg" alt="Master Bedroom">
+            </div>
+            <div class="gallery-item">
+                <img src="images/20250907_193417.jpg" alt="Private Gym">
+            </div>
+            <div class="gallery-item">
+                <img src="images/20251026_151043.jpg" alt="Entryway">
+            </div>
+            <div class="gallery-item">
+                <img src="images/20251026_153124.jpg" alt="Living Room">
+            </div>
+            <div class="gallery-item">
+                <img src="images/20251026_153520.jpg" alt="Wood Stove">
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="section amenities" id="amenities">
+        <div class="section-header">
+            <div class="section-tag">Amenities</div>
+            <h2 class="section-title">Everything You Need</h2>
+            <p class="section-description">Our property is equipped with premium amenities to ensure comfort, entertainment, and unforgettable experiences.</p>
+        </div>
+        <div class="amenities-grid">
+            <div class="amenity-category">
+                <h3>Living & Comfort</h3>
+                <ul class="amenity-list">
+                    <li>Sleeps 12 guests comfortably</li>
+                    <li>4 spacious bedrooms with quality linens</li>
+                    <li>6 beds - 1 King, 3 Queen, 2 folding Full/Double</li>
+                    <li>3 modern bathrooms</li>
+                    <li>Cozy wood stove & fireplace</li>
+                    <li>Heating throughout, AC in living and dining rooms</li>
+                    <li>Washer and dryer</li>
+                    <li>High-speed WiFi</li>
+                </ul>
+            </div>
+            <div class="amenity-category">
+                <h3>Kitchen & Dining</h3>
+                <ul class="amenity-list">
+                    <li>Gourmet kitchen with granite counters</li>
+                    <li>Professional appliances</li>
+                    <li>Large dining table seats 8  +</li>
+                    <li>Kitchen island with bar seating</li>
+                    <li>Coffee makers & toaster oven</li>
+                    <li>Full cookware & dishware</li>
+                    <li>Dishwasher</li>
+                </ul>
+            </div>
+            <div class="amenity-category">
+                <h3>Entertainment</h3>
+                <ul class="amenity-list">
+                    <li>Game loft: Ping pong & air hockey</li>
+                    <li>Mini basketball hoop & dartboard</li>
+                    <li>Professional foosball table</li>
+                    <li>Fully equipped private gym</li>
+                    <li>Treadmill & rowing machine</li>
+                    <li>Free weights & punching bag</li>
+                    <li>Multiple smart TVs</li>
+                </ul>
+            </div>
+            <div class="amenity-category">
+                <h3>Outdoor</h3>
+                <ul class="amenity-list">
+                    <li>Private hot tub with LED lighting</li>
+                    <li>Fire pit area with seating</li>
+                    <li>Mountain and forest views</li>
+                    <li>10 minutes to park entrance</li>
+                    <li>Ample parking</li>
+                    <li>Pet-friendly (inquire)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlight Section -->
+    <div class="highlight-section">
+        <div class="highlight-image">   
+            <img src="images/rainier.jpg" alt="Mountain Views">
+        </div>
+        <div class="highlight-content">
+            <div class="section-tag">Location</div>
+            <h2 class="section-title">Gateway to Mt. Rainier</h2>
+            <p>Located in Ashford, Washington, our property sits at the doorstep of one of America's most iconic national parks. Wake up to stunning mountain views, explore pristine trails, and return to comfort and luxury.</p>
+            <p>Whether you're seeking adventure or relaxation, you'll find the perfect balance here. From hiking and wildlife viewing to cozy evenings by the fire, every moment becomes a memory.</p>
+            <p><strong>5 miles to Nisqually entrance</strong></p>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-header">
+            <h2 class="section-title">Ready to Book Your Stay?</h2>
+            <p class="section-description">Experience the perfect mountain getaway. Check availability and reserve your dates today.</p>
+        </div>
+        <a href="mailto:rainiergetawayllc@gmail.com" target="_blank" class="cta-button">Book Direct (email)</a>
+        <a href="https://www.airbnb.com/h/rainiergetaway" target="_blank" class="cta-button">Book on Airbnb</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Rainier Getaway</h3>
+                <p>Your luxury mountain retreat near Mt. Rainier National Park. Experience unforgettable moments with family and friends in the heart of the Pacific Northwest.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#amenities">Amenities</a></li>
+                    <li><a href="#location">Location</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:rainiergetawayllc@gmail.com">Email Us</a></li>
+                    <li><a href="https://www.airbnb.com/h/rainiergetaway" target="_blank">View on Airbnb</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rainier Getaway LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Nav scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
