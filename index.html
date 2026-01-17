@@ -31,6 +31,11 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        .icon { 
+            height:48px;
+            width:48px;
+        }
+
         /* Navigation */
         nav {
             position: fixed;
@@ -64,6 +69,19 @@
             display: flex;
             gap: 2.5rem;
             align-items: center;
+            
+            .nav-cta {
+                background: var(--primary);
+                color: white;
+                padding: 0.75rem 1.75rem;
+                border-radius: 2px;
+                transition: all 0.3s ease;
+            }
+
+            .nav-cta:hover {
+                background: var(--accent);
+                color: var(--primary);
+            }
         }
 
         .nav-links a {
@@ -76,19 +94,6 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-cta {
-            background: var(--primary);
-            color: white;
-            padding: 0.75rem 1.75rem;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-cta:hover {
-            background: var(--accent);
             color: var(--primary);
         }
 
@@ -598,6 +603,9 @@
             <a href="#gallery">Gallery</a>
             <a href="#amenities">Amenities</a>
             <a href="#location">Location</a>
+            <a href="https://www.instagram.com/rainiergetaway">
+                <img src="images/instagram-icon.png" alt="instagram icon" class="icon">
+            </a>
             <a href="#book-now" target="_blank" class="nav-cta">Book Now</a>
         </div>
     </nav>
@@ -793,6 +801,9 @@
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#amenities">Amenities</a></li>
                     <li><a href="#location">Location</a></li>
+                    <a href="https://www.instagram.com/rainiergetaway">
+                        <img src="images/instagram-icon.png" alt="instagram icon" class="icon">
+                    </a>
                 </ul>
             </div>
             <div class="footer-section">
