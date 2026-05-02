@@ -301,6 +301,41 @@
             transform: scale(1.05);
         }
 
+        /* Collage Grid */
+        .collage-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 1600px;
+            margin: 0 auto 2rem;
+        }
+
+        .collage-item {
+            width: calc(50% - 0.5rem);
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .collage-item:hover {
+            transform: scale(1.02);
+        }
+
+        .collage-item img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            object-position: center bottom;
+            transition: all 0.3s ease;
+        }
+
+        .collage-item:hover img {
+            transform: scale(1.05);
+        }
+
         /* Features Grid */
         .features-grid {
             display: grid;
@@ -674,6 +709,23 @@
             <div class="section-tag">Gallery</div>
             <h2 class="section-title">Explore the Space</h2>
         </div>
+        <!-- <div class="collage-grid">
+            <div class="collage-item">
+                <img src="images/collages/Gemini_Generated_Image_vbgdi8vbgdi8vbgd (1).png" alt="Exterior">
+            </div>
+            <div class="collage-item">
+                <img src="images/collages/watermark-removed-Gemini_Generated_Image_j0zh6aj0zh6aj0zh.png" alt="Activites">
+            </div>
+            <div class="collage-item">
+                <img src="images/collages/Gemini_Generated_Image_oxglidoxglidoxgl-clean.png" alt="Interior">
+            </div>
+            <div class="collage-item">
+                <img src="images/collages/Gemini_Generated_Image_6udr6g6udr6g6udr-clean.png" alt="Beds">
+            </div>
+            <div class="collage-item">
+                <img src="images/collages/Gemini_Generated_Image_xgf2nuxgf2nuxgf2-clean.png" alt="Bathrooms">
+            </div>
+        </div> -->
         <div class="gallery-grid">
             <div class="gallery-item">
                 <img src="images/ai_photos_4_25/garage game room/1.png" alt="Game Loft">
@@ -694,7 +746,7 @@
                 <img src="images/ai_photos_4_25/gym/Gemini_Generated_Image_9nowbu9nowbu9now.png" alt="Private Gym">
             </div>
             <div class="gallery-item">
-                <img src="images/ai_photos_4_25/entry/Gemini_Generated_Image_ih0gexih0gexih0g.png" alt="Entryway">
+                <img src="images/ai_photos_4_25/bedroom mstr/Gemini_Generated_Image_uapiaruapiaruapi.png" alt="Work desk with moutain view">
             </div>
             <div class="gallery-item">
                 <img src="images/ai_photos_4_25/living room/Gemini_Generated_Image_efddrzefddrzefdd.png" alt="Living Room">
