@@ -1,0 +1,8 @@
+{
+  "name": "rainier-getaway",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test availability.test.js"
+  }
+}

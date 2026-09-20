@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/react-calendar@5.1.0/dist/Calendar.css">
     <style>
         * {
             margin: 0;
@@ -102,6 +103,14 @@
 
         .nav-links a:hover {
             color: var(--primary);
+        }
+
+        .availability-nav-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem !important;
+            line-height: 1;
         }
 
         /* Hero Section */
@@ -494,6 +503,66 @@
             color: rgba(255,255,255,0.8);
         }
 
+        .availability-section-wrap {
+            background: var(--light);
+            color: var(--primary);
+            text-align: center;
+            padding: 8rem 5%;
+        }
+
+        .availability-section {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .availability-calendar {
+            max-width: 560px;
+            margin: 0 auto;
+            padding: 1.25rem;
+            background: var(--white);
+            color: var(--primary);
+            text-align: left;
+        }
+
+        .availability-calendar .react-calendar {
+            width: 100%;
+            border: 0;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .availability-calendar .react-calendar button {
+            font-family: inherit;
+        }
+
+        .availability-calendar .react-calendar__tile {
+            min-height: 3rem;
+        }
+
+        .availability-calendar .react-calendar__tile--now {
+            background: rgba(201,168,114,0.25);
+        }
+
+        .availability-calendar .react-calendar__tile--active {
+            background: var(--forest);
+        }
+
+        .availability-calendar .unavailable-date {
+            background: #eadfda;
+            color: #8b3f32;
+            text-decoration: line-through;
+        }
+
+        .availability-status {
+            margin-top: 1rem;
+            color: var(--secondary);
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .availability-status.error {
+            color: #8b3f32;
+        }
+
         .booking-details {
             max-width: 800px;
             margin: 0 auto 2rem;
@@ -737,6 +806,7 @@
             <a href="#gallery">Gallery</a>
             <a href="#amenities">Amenities</a>
             <a href="#location">Location</a>
+            <a href="#availability" class="availability-nav-link" aria-label="Check availability" title="Check availability">&#128197;</a>
             <a href="https://www.instagram.com/rainiergetaway">
                 <img src="images/instagram-icon.png" alt="instagram icon" class="icon">
             </a>
@@ -929,11 +999,25 @@
         </div>
     </div>
 
+    <!-- Availability Section -->
+    <section class="availability-section-wrap" id="availability">
+        <div class="availability-section">
+            <div class="section-header">
+                <div class="section-tag">Availability</div>
+                <h2 class="section-title">Check Availability</h2>
+                <p class="section-description">Reserved dates are marked on the calendar below. Reserve your dates by booking below.</p>
+            </div>
+            <div id="availability-calendar" class="availability-calendar">
+                <p class="availability-status">Loading availability...</p>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section" id="book-now">
         <h2 class="section-title">Book Now</h2>
         <div class="booking-details">
-        <h3 class="booking-details-title">Book Direct With Confidence</h3>
+        <h3 class="booking-details-title">Book Direct With Confidence and Save 10%</h3>
         <a href="https://docs.google.com/forms/d/1P4zrzBh5_M9ItTD8iGvubHM_zeDbUCXZ_BLdG_O9oxI" target="_blank" class="cta-button">Book Direct</a>
             <div class="booking-tabs" role="tablist" aria-label="Direct booking details">
                 <button class="booking-tab" id="deposit-tab" role="tab" aria-selected="true" aria-controls="deposit-panel" tabindex="0">Damage Deposit</button>
@@ -970,9 +1054,9 @@
 
             <div class="booking-panel" id="non-refundable-panel" role="tabpanel" aria-labelledby="non-refundable-tab" tabindex="0" hidden>
                 <p>If you choose this option, the full amount is due at time of booking.</p>
-                <p>No refunds will be issued for cancellations made after the booking is confirmed.</p>
+                <p>No refunds for trip payments will be issued for cancellations made after the booking is confirmed.</p>
                 <p>A 10% discount will be applied.</p>
-                <p>Damage deposit will also be due upfront, but will be refunded if you cancel before check-in.</p>
+                <p>NOTE: Damage deposit will also be due upfront, but will be refunded if you cancel before check-in.</p>
             </div>
         </div>
         <div class="platform-booking">
@@ -1015,7 +1099,45 @@
         </div>
     </footer>
 
-    <script>
+    <script type="module">
+        import React, { useEffect, useState } from 'https://esm.sh/react@18.3.1';
+        import { createRoot } from 'https://esm.sh/react-dom@18.3.1/client';
+        import Calendar from 'https://esm.sh/react-calendar@5.1.0?deps=react@18.3.1';
+
+        function AvailabilityCalendar() {
+            const [unavailableDates, setUnavailableDates] = useState(new Set());
+            const [status, setStatus] = useState('Loading availability...');
+            const [hasError, setHasError] = useState(false);
+
+            useEffect(() => {
+                import('./availability.js')
+                    .then(({ fetchIcalFeed, parseUnavailableDates }) => fetchIcalFeed()
+                        .then(icalText => {
+                            setUnavailableDates(parseUnavailableDates(icalText));
+                            setStatus('Reserved dates are marked in red.');
+                        }))
+                    .catch(error => {
+                        console.error('[Availability] Calendar module or feed could not load.', error);
+                        setHasError(true);
+                        setStatus('Availability could not be loaded. Please check availability on Airbnb.');
+                    })
+            }, []);
+
+            return React.createElement(
+                React.Fragment,
+                null,
+                React.createElement(Calendar, {
+                    minDate: new Date(),
+                    showNeighboringMonth: false,
+                    tileClassName: ({ date, view }) => view === 'month' && unavailableDates.has(date.toISOString().slice(0, 10)) ? 'unavailable-date' : null,
+                    tileDisabled: ({ date, view }) => view === 'month' && unavailableDates.has(date.toISOString().slice(0, 10))
+                }),
+                React.createElement('p', { className: `availability-status${hasError ? ' error' : ''}` }, status)
+            );
+        }
+
+        createRoot(document.getElementById('availability-calendar')).render(React.createElement(AvailabilityCalendar));
+
         // Smooth scroll navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
