@@ -546,10 +546,14 @@
             background: var(--forest);
         }
 
+        .availability-calendar .weekend-date {
+            background: transparent;
+            color: #24506a;
+        }
+
         .availability-calendar .unavailable-date {
             background: #eadfda;
             color: #8b3f32;
-            text-decoration: line-through;
         }
 
         .availability-status {
@@ -1105,6 +1109,10 @@
         import { createRoot } from 'https://esm.sh/react-dom@18.3.1/client';
         import Calendar from 'https://esm.sh/react-calendar@5.1.0?deps=react@18.3.1';
 
+        function calendarDateKey(date) {
+            return new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())).toISOString().slice(0, 10);
+        }
+
         function AvailabilityCalendar() {
             const [unavailableDates, setUnavailableDates] = useState(new Set());
             const [status, setStatus] = useState('Loading availability...');
@@ -1112,15 +1120,15 @@
 
             useEffect(() => {
                 import('./availability.js')
-                    .then(({ fetchIcalFeed, parseUnavailableDates }) => fetchIcalFeed()
-                        .then(icalText => {
-                            setUnavailableDates(parseUnavailableDates(icalText));
-                            setStatus('Reserved dates are marked in red.');
+                    .then(({ fetchUnavailableDates }) => fetchUnavailableDates()
+                        .then(dates => {
+                            setUnavailableDates(dates);
+                            setStatus('Reserved dates are red. Weekend dates are light blue.');
                         }))
                     .catch(error => {
                         console.error('[Availability] Calendar module or feed could not load.', error);
                         setHasError(true);
-                        setStatus('Availability could not be loaded. Please check availability on Airbnb.');
+                        setStatus('Availability could not be loaded. Please reload or check on Airbnb.');
                     })
             }, []);
 
@@ -1130,8 +1138,23 @@
                 React.createElement(Calendar, {
                     minDate: new Date(),
                     showNeighboringMonth: false,
-                    tileClassName: ({ date, view }) => view === 'month' && unavailableDates.has(date.toISOString().slice(0, 10)) ? 'unavailable-date' : null,
-                    tileDisabled: ({ date, view }) => view === 'month' && unavailableDates.has(date.toISOString().slice(0, 10))
+                    tileClassName: ({ date, view }) => {
+                        if (view !== 'month') {
+                            return null;
+                        }
+
+                        const dateKey = calendarDateKey(date);
+                        const classes = [];
+                        if (date.getDay() === 0 || date.getDay() === 6) {
+                            classes.push('weekend-date');
+                        }
+                        if (unavailableDates.has(dateKey)) {
+                            classes.push('unavailable-date');
+                        }
+
+                        return classes.join(' ');
+                    },
+                    tileDisabled: ({ date, view }) => view === 'month' && unavailableDates.has(calendarDateKey(date))
                 }),
                 React.createElement('p', { className: `availability-status${hasError ? ' error' : ''}` }, status)
             );

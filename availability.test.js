@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-    AVAILABILITY_PROXY_URL,
+    AVAILABILITY_PROXY_URLS,
     dateKey,
     fetchIcalFeed,
+    fetchUnavailableDates,
     parseIcalDate,
     parseUnavailableDates
 } from './availability.js';
@@ -50,7 +51,7 @@ test('unfolds continued iCal lines before parsing events', () => {
     assert.deepEqual([...parseUnavailableDates(ical)], ['2026-11-01']);
 });
 
-test('fetches the first valid iCal source', async () => {
+test('fetches a calendar feed through its proxy', async () => {
     const calls = [];
     const fetchImplementation = async url => {
         calls.push(url);
@@ -61,21 +62,57 @@ test('fetches the first valid iCal source', async () => {
         };
     };
 
-    assert.equal(await fetchIcalFeed(fetchImplementation), sampleIcal);
+    assert.equal(await fetchIcalFeed(AVAILABILITY_PROXY_URLS[0].url, 'Airbnb', fetchImplementation), sampleIcal);
     assert.equal(calls.length, 1);
-    assert.equal(calls[0], AVAILABILITY_PROXY_URL);
+    assert.equal(calls[0], AVAILABILITY_PROXY_URLS[0].url);
 });
 
-test('uses only the AllOrigins proxy when the request fails', async () => {
+test('merges reserved dates from Airbnb and VRBO', async () => {
     const calls = [];
+    const vrboIcal = sampleIcal.replace('20261010', '20261101').replace('20261013', '20261103');
     const fetchImplementation = async url => {
         calls.push(url);
-        throw new Error('CORS blocked');
+        return {
+            ok: true,
+            status: 200,
+            text: async () => url === AVAILABILITY_PROXY_URLS[0].url ? sampleIcal : vrboIcal
+        };
     };
 
-    await assert.rejects(fetchIcalFeed(fetchImplementation), /CORS blocked/);
-    assert.equal(calls.length, 1);
-    assert.equal(calls[0], AVAILABILITY_PROXY_URL);
+    const unavailableDates = await fetchUnavailableDates(fetchImplementation);
+
+    assert.deepEqual([...unavailableDates], [
+        '2026-10-10', '2026-10-11', '2026-10-12',
+        '2026-11-01', '2026-11-02'
+    ]);
+    assert.deepEqual(calls.sort(), AVAILABILITY_PROXY_URLS.map(feed => feed.url).sort());
+});
+
+test('keeps dates when one calendar feed fails', async () => {
+    const fetchImplementation = async url => {
+        if (url === AVAILABILITY_PROXY_URLS[0].url) {
+            throw new Error('Airbnb unavailable');
+        }
+
+        return {
+            ok: true,
+            status: 200,
+            text: async () => sampleIcal
+        };
+    };
+
+    assert.deepEqual(
+        [...await fetchUnavailableDates(fetchImplementation)],
+        ['2026-10-10', '2026-10-11', '2026-10-12']
+    );
+});
+
+test('rejects when both calendar feeds fail', async () => {
+    const fetchImplementation = async () => {
+        throw new Error('Feeds unavailable');
+    };
+
+    await assert.rejects(fetchUnavailableDates(fetchImplementation), /No availability feeds could be loaded/);
 });
 
 test('rejects a successful response that is not iCal', async () => {
@@ -85,5 +122,8 @@ test('rejects a successful response that is not iCal', async () => {
         text: async () => '<html>not a calendar</html>'
     });
 
-    await assert.rejects(fetchIcalFeed(fetchImplementation), /Invalid availability feed/);
+    await assert.rejects(
+        fetchIcalFeed(AVAILABILITY_PROXY_URLS[0].url, 'Airbnb', fetchImplementation),
+        /Invalid Airbnb availability feed/
+    );
 });
