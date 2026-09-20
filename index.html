@@ -1117,6 +1117,7 @@
             const [unavailableDates, setUnavailableDates] = useState(new Set());
             const [status, setStatus] = useState('Loading availability...');
             const [hasError, setHasError] = useState(false);
+            const [isLoading, setIsLoading] = useState(true);
 
             useEffect(() => {
                 import('./availability.js')
@@ -1124,11 +1125,13 @@
                         .then(dates => {
                             setUnavailableDates(dates);
                             setStatus('Reserved dates are red. Weekend dates are light blue.');
+                            setIsLoading(false);
                         }))
                     .catch(error => {
                         console.error('[Availability] Calendar module or feed could not load.', error);
                         setHasError(true);
                         setStatus('Availability could not be loaded. Please reload or check on Airbnb.');
+                        setIsLoading(false);
                     })
             }, []);
 
@@ -1137,6 +1140,11 @@
                 null,
                 React.createElement(Calendar, {
                     minDate: new Date(),
+                    maxDate: (() => {
+                        const date = new Date();
+                        date.setMonth(date.getMonth() + 18);
+                        return date;
+                    })(),
                     showNeighboringMonth: false,
                     tileClassName: ({ date, view }) => {
                         if (view !== 'month') {
@@ -1154,7 +1162,7 @@
 
                         return classes.join(' ');
                     },
-                    tileDisabled: ({ date, view }) => view === 'month' && unavailableDates.has(calendarDateKey(date))
+                    tileDisabled: ({ date, view }) => isLoading || (view === 'month' && unavailableDates.has(calendarDateKey(date)))
                 }),
                 React.createElement('p', { className: `availability-status${hasError ? ' error' : ''}` }, status)
             );
