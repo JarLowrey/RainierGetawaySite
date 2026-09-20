@@ -1124,13 +1124,13 @@
                     .then(({ fetchUnavailableDates }) => fetchUnavailableDates()
                         .then(dates => {
                             setUnavailableDates(dates);
-                            setStatus('Reserved dates are red. Weekend dates are light blue.');
+                            setStatus('Reserved dates are red.');
                             setIsLoading(false);
                         }))
                     .catch(error => {
                         console.error('[Availability] Calendar module or feed could not load.', error);
                         setHasError(true);
-                        setStatus('Availability could not be loaded. Please reload or check on Airbnb.');
+                        setStatus('Availability could not be loaded. Please reload after the calendar is updated.');
                         setIsLoading(false);
                     })
             }, []);
