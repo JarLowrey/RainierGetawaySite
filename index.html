@@ -829,7 +829,7 @@
             <div class="hero-subtitle">Mount Rainier National Park</div>
             <h1>Your Mountain Escape Awaits</h1>
             <p class="hero-description">Experience luxury and adventure in our fully-equipped mountain retreat. Sleeps 12 with premium amenities, private gym, two game lofts, and hot tub.</p>
-            <a href="https://www.airbnb.com/h/rainiergetaway" target="_blank" class="hero-cta">View Availability</a>
+            <a href="#availability" class="hero-cta">View Availability</a>
         </div>
     </section>
 
@@ -1120,7 +1120,7 @@
                     .then(({ fetchUnavailableDates }) => fetchUnavailableDates()
                         .then(dates => {
                             setUnavailableDates(dates);
-                            setStatus('Reserved dates are red.');
+                            setStatus('Unavailable dates are red.');
                             setIsLoading(false);
                         }))
                     .catch(error => {
