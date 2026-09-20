@@ -68,7 +68,7 @@ The GitHub Actions workflow `.github/workflows/update-calendars.yml` downloads t
 
 The website itself does not request Airbnb or VRBO directly. It reads only the generated combined calendar file.
 
-The GitHub Actions workflow `.github/workflows/update-reviews.yml` opens the Airbnb reviews dialog, collects the review responses, filters five-star reviews, and writes them to `reviews.json`. It runs every six hours and can also be started manually with the `workflow_dispatch` trigger.
+The GitHub Actions workflow `.github/workflows/update-reviews.yml` opens the Airbnb reviews dialog, collects the review responses, filters five-star reviews, and writes them to `data/reviews.json`. It runs every six hours and can also be started manually with the `workflow_dispatch` trigger.
 
 ## Project Structure
 
@@ -82,5 +82,5 @@ calendars/combined.ics             Generated merged availability calendar
 .github/workflows/update-reviews.yml
                                     Scheduled Airbnb review update workflow
 scripts/fetch-airbnb-reviews.mjs    Airbnb review scraper
-reviews.json                        Generated five-star review data
+data/reviews.json                   Generated five-star review data
 ```
