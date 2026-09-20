@@ -36,6 +36,7 @@
             color: var(--primary);
             background: var(--white);
             line-height: 1.6;
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -610,12 +611,10 @@
         }
 
         .reviews-carousel {
-            display: grid;
-            grid-template-columns: auto minmax(0, 1fr) auto;
-            align-items: center;
-            gap: 1rem;
+            position: relative;
             max-width: 1500px;
-            margin: 0 auto;
+            margin: 0.5rem auto;
+            padding: 0 0.5rem;
         }
 
         .reviews-grid {
@@ -623,6 +622,7 @@
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1.25rem;
             min-width: 0;
+            padding: 0 2.25rem;
         }
 
         .review-card {
@@ -636,27 +636,44 @@
         }
 
         .review-nav {
-            width: 2.75rem;
-            height: 2.75rem;
-            border: 1px solid rgba(26, 26, 26, 0.2);
-            border-radius: 50%;
-            background: var(--white);
-            color: var(--primary);
+            position: absolute;
+            top: 50%;
+            z-index: 2;
+            width: 2.25rem;
+            height: 2.25rem;
+            border: 0;
+            border-radius: 4px;
+            background: var(--forest);
+            color: var(--white);
             cursor: pointer;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             line-height: 1;
-            transition: all 0.3s ease;
+            margin: 0;
+            transform: translateY(-50%);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .review-nav:first-child {
+            left: 0;
+        }
+
+        .review-nav:last-child {
+            right: 0;
         }
 
         .review-nav:hover:not(:disabled) {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: scale(1.05);
+            background: var(--accent);
+            color: var(--primary);
         }
 
         .review-nav:disabled {
             cursor: default;
-            opacity: 0.35;
+            opacity: 0.2;
+        }
+
+        .review-nav:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
         }
 
         .review-card-header {
@@ -1027,6 +1044,26 @@
 
             .reviews-grid {
                 grid-template-columns: 1fr;
+                padding: 0 1.75rem;
+            }
+
+            .reviews-carousel {
+                margin-top: 3.75rem;
+            }
+
+            .review-nav {
+                top: -3rem;
+                transform: none;
+            }
+
+            .review-nav:first-child {
+                left: calc(50% - 2.75rem);
+                right: auto;
+            }
+
+            .review-nav:last-child {
+                left: calc(50% + 0.5rem);
+                right: auto;
             }
 
             .review-text {
@@ -1468,6 +1505,7 @@
                         className: 'review-nav',
                         type: 'button',
                         'aria-label': 'Previous reviews',
+                        title: 'Previous reviews',
                         disabled: pageCount <= 1,
                         onClick: () => moveReviewPage(-1)
                     },
@@ -1519,6 +1557,7 @@
                         className: 'review-nav',
                         type: 'button',
                         'aria-label': 'Next reviews',
+                        title: 'Next reviews',
                         disabled: pageCount <= 1,
                         onClick: () => moveReviewPage(1)
                     },
