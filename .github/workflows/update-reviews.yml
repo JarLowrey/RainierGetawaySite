@@ -2,7 +2,7 @@ name: Update Airbnb Reviews
 
 on:
   schedule:
-    - cron: "30 */6 * * *"
+    - cron: "30 0 * * 0"
   workflow_dispatch:
 
 permissions:

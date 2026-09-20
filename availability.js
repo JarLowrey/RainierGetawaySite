@@ -1,4 +1,4 @@
-export const COMBINED_CALENDAR_PATH = './calendars/combined.ics';
+export const COMBINED_CALENDAR_PATH = './data/combined_calendar.ics';
 
 export function parseIcalDate(value) {
     const dateValue = value.split(':').pop().trim();

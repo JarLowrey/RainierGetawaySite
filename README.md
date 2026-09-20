@@ -9,7 +9,7 @@ The site includes:
 - Property gallery and amenities
 - Direct booking terms and platform booking links
 - A React availability calendar
-- Availability parsed from `calendars/combined.ics`
+- Availability parsed from `data/combined_calendar.ics`
 
 ## Requirements
 
@@ -55,7 +55,7 @@ http://localhost:8000/
 The calendar loads availability from:
 
 ```text
-calendars/combined.ics
+data/combined_calendar.ics
 ```
 
 If your Github Action is not setup yet, copy in any ICS file and rename it to the expect filename.
@@ -64,11 +64,11 @@ To stop the server, press `Ctrl+C` in the terminal running it.
 
 ## Calendar Updates
 
-The GitHub Actions workflow `.github/workflows/update-calendars.yml` downloads the Airbnb and VRBO iCal feeds, removes duplicate events, and writes the merged result to `calendars/combined.ics`. It runs periodically and can also be started manually with the `workflow_dispatch` trigger.
+The GitHub Actions workflow `.github/workflows/update-calendars.yml` downloads the Airbnb and VRBO iCal feeds, removes duplicate events, and writes the merged result to `data/combined_calendar.ics`. It runs periodically and can also be started manually with the `workflow_dispatch` trigger.
 
 The website itself does not request Airbnb or VRBO directly. It reads only the generated combined calendar file.
 
-The GitHub Actions workflow `.github/workflows/update-reviews.yml` opens the Airbnb reviews dialog, collects the review responses, filters five-star reviews, and writes them to `data/reviews.json`. It runs every six hours and can also be started manually with the `workflow_dispatch` trigger.
+The GitHub Actions workflow `.github/workflows/update-reviews.yml` opens the Airbnb reviews dialog, collects the review responses, filters five-star reviews, and writes them to `data/reviews.json`. It runs weekly on Sunday at 00:30 UTC and can also be started manually with the `workflow_dispatch` trigger.
 
 ## Project Structure
 
@@ -76,7 +76,7 @@ The GitHub Actions workflow `.github/workflows/update-reviews.yml` opens the Air
 index.html                         Main website
 availability.js                    Calendar loading and iCal parsing
 availability.test.js               Availability unit tests
-calendars/combined.ics             Generated merged availability calendar
+data/combined_calendar.ics         Generated merged availability calendar
 .github/workflows/update-calendars.yml
                                     Scheduled calendar update workflow
 .github/workflows/update-reviews.yml

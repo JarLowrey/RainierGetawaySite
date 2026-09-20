@@ -131,7 +131,8 @@ jobs:
           calendar.extend(final_events)
           calendar.append("END:VCALENDAR")
 
-          Path("calendars/combined.ics").write_text(
+          Path("data").mkdir(parents=True, exist_ok=True)
+          Path("data/combined_calendar.ics").write_text(
               "\r\n".join(calendar) + "\r\n",
               encoding="utf-8"
           )
@@ -140,7 +141,7 @@ jobs:
           print(f"Total events downloaded: {len(events)}")
           print(f"Duplicates removed:       {duplicates}")
           print(f"Final events:             {len(final_events)}")
-          print("Created calendars/combined.ics")
+          print("Created data/combined_calendar.ics")
           PY
 
       - name: Commit combined calendar
@@ -148,7 +149,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add calendars/combined.ics
+          git add data/combined_calendar.ics
 
           if git diff --cached --quiet; then
             echo "No calendar changes"
