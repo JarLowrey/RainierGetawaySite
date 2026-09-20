@@ -56,6 +56,8 @@ The calendar loads availability from:
 calendars/combined.ics
 ```
 
+If your Github Action is not setup yet, copy in any ICS file and rename it to the expect filename.
+
 To stop the server, press `Ctrl+C` in the terminal running it.
 
 ## Calendar Updates
