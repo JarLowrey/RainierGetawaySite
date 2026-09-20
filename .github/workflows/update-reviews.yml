@@ -1,0 +1,44 @@
+name: Update Airbnb Reviews
+
+on:
+  schedule:
+    - cron: "30 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-reviews:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install browser scraper
+        run: npm install --no-save playwright@1.55.0
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Pull five-star Airbnb reviews
+        run: node scripts/fetch-airbnb-reviews.mjs
+
+      - name: Commit reviews JSON
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reviews.json
+
+          if git diff --cached --quiet; then
+            echo "No review changes"
+          else
+            git commit -m "Update Airbnb reviews"
+            git push
+          fi
