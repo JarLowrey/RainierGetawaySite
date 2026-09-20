@@ -66,12 +66,25 @@
         }
 
         .logo {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.65rem;
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
             font-weight: 600;
             letter-spacing: 0.02em;
             color: var(--primary);
         }
+
+            .logo-icon {
+                width: 2.25rem;
+                height: 2.25rem;
+                object-fit: contain;
+            }
+
+            .logo-text {
+                white-space: nowrap;
+            }
 
         .nav-links {
             display: flex;
@@ -936,6 +949,15 @@
                 display: block;
             }
 
+                .logo-icon {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
+
+                .logo-text {
+                    font-size: 1.25rem;
+                }
+
             .nav-links {
                 position: absolute;
                 top: 100%;
@@ -1014,7 +1036,10 @@
 <body>
     <!-- Navigation -->
     <nav id="nav">
-        <div class="logo">Rainier Getaway</div>
+        <div class="logo" aria-label="Rainier Getaway">
+            <img class="logo-icon" src="images/favicon/favicon.svg" alt="Rainier Getaway icon">
+            <span class="logo-text">Rainier Getaway</span>
+        </div>
         <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">&#9776;</button>
         <div class="nav-links" id="primary-navigation">
             <a href="#gallery">Gallery</a>
