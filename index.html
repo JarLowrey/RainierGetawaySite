@@ -105,6 +105,17 @@
             color: var(--primary);
         }
 
+        .mobile-nav-toggle {
+            display: none;
+            border: 0;
+            background: transparent;
+            color: var(--primary);
+            cursor: pointer;
+            font-size: 1.75rem;
+            line-height: 1;
+            padding: 0.5rem;
+        }
+
         .availability-nav-link {
             display: inline-flex;
             align-items: center;
@@ -567,6 +578,147 @@
             color: #8b3f32;
         }
 
+        /* Reviews Section */
+        .reviews-section {
+            padding: 8rem 5%;
+            background: #f1eee8;
+        }
+
+        .reviews-section .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .reviews-carousel {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 1rem;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+            min-width: 0;
+        }
+
+        .review-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 285px;
+            padding: 2rem;
+            background: var(--white);
+            border-top: 3px solid var(--accent);
+            box-shadow: 0 8px 25px rgba(26, 26, 26, 0.06);
+        }
+
+        .review-nav {
+            width: 2.75rem;
+            height: 2.75rem;
+            border: 1px solid rgba(26, 26, 26, 0.2);
+            border-radius: 50%;
+            background: var(--white);
+            color: var(--primary);
+            cursor: pointer;
+            font-size: 1.5rem;
+            line-height: 1;
+            transition: all 0.3s ease;
+        }
+
+        .review-nav:hover:not(:disabled) {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .review-nav:disabled {
+            cursor: default;
+            opacity: 0.35;
+        }
+
+        .review-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .review-rating {
+            color: var(--forest);
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            white-space: nowrap;
+        }
+
+        .review-date {
+            color: var(--secondary);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .review-text {
+            flex: 1;
+            max-height: 9rem;
+            overflow: hidden;
+            color: var(--secondary);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            line-height: 1.45;
+        }
+
+        .review-text.is-expanded {
+            max-height: none;
+        }
+
+        .review-label {
+            margin-top: 1.5rem;
+            color: var(--primary);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .review-expand {
+            border: 0;
+            background: transparent;
+            color: var(--primary);
+            cursor: pointer;
+            font: inherit;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 0;
+            text-decoration: underline;
+            text-underline-offset: 0.2rem;
+            text-transform: uppercase;
+        }
+
+        .review-expand {
+            align-self: flex-start;
+            margin-top: 1rem;
+        }
+
+        .review-expand:hover {
+            color: var(--accent);
+        }
+
+        .reviews-status {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--secondary);
+            text-align: center;
+        }
+
+        .reviews-status.error {
+            color: #8b3f32;
+        }
+
         .booking-details {
             max-width: 800px;
             margin: 0 auto;
@@ -766,14 +918,59 @@
                 grid-template-columns: 1fr;
             }
 
+            .reviews-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5%;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+            }
+
             .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
                 display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 0.75rem 5% 1rem;
+                background: rgba(255, 255, 255, 0.98);
+                box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.is-open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.8rem 0;
+            }
+
+            .nav-links .availability-nav-link {
+                justify-content: flex-start;
+            }
+
+            .nav-links .icon {
+                width: 32px;
+                height: 32px;
+            }
+
+            .nav-links .nav-cta {
+                margin-top: 0.5rem;
+                padding: 0.8rem 1rem;
+                text-align: center;
             }
 
             .hero h1 {
@@ -798,6 +995,10 @@
                 padding: 5rem 5%;
             }
 
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -809,9 +1010,11 @@
     <!-- Navigation -->
     <nav id="nav">
         <div class="logo">Rainier Getaway</div>
-        <div class="nav-links">
+        <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">&#9776;</button>
+        <div class="nav-links" id="primary-navigation">
             <a href="#gallery">Gallery</a>
             <a href="#amenities">Amenities</a>
+            <a href="#reviews">Reviews</a>
             <a href="#location">Location</a>
             <a href="#availability" class="availability-nav-link" aria-label="Check availability" title="Check availability">&#128197;</a>
             <a href="https://www.instagram.com/rainiergetaway">
@@ -885,23 +1088,6 @@
             <div class="section-tag">Gallery</div>
             <h2 class="section-title">Explore the Space</h2>
         </div>
-        <!-- <div class="collage-grid">
-            <div class="collage-item">
-                <img src="images/collages/Gemini_Generated_Image_vbgdi8vbgdi8vbgd (1).png" alt="Exterior">
-            </div>
-            <div class="collage-item">
-                <img src="images/collages/watermark-removed-Gemini_Generated_Image_j0zh6aj0zh6aj0zh.png" alt="Activites">
-            </div>
-            <div class="collage-item">
-                <img src="images/collages/Gemini_Generated_Image_oxglidoxglidoxgl-clean.png" alt="Interior">
-            </div>
-            <div class="collage-item">
-                <img src="images/collages/Gemini_Generated_Image_6udr6g6udr6g6udr-clean.png" alt="Beds">
-            </div>
-            <div class="collage-item">
-                <img src="images/collages/Gemini_Generated_Image_xgf2nuxgf2nuxgf2-clean.png" alt="Bathrooms">
-            </div>
-        </div> -->
         <div class="gallery-grid">
             <div class="gallery-item">
                 <img src="images/ai_photos_4_25/garage game room/ChatGPT Image Sep 20, 2026, 02_27_15 PM.png" alt="Game Loft">
@@ -1000,6 +1186,18 @@
         </div>
     </div>
 
+    <!-- Reviews Section -->
+    <section class="reviews-section" id="reviews">
+        <div class="section-header">
+            <div class="section-tag">Guest Reviews</div>
+            <h2 class="section-title">Here's what people are saying</h2>
+            <p class="section-description">A few words from guests who have made Rainier Getaway part of their mountain story.</p>
+        </div>
+        <div id="reviews-carousel" aria-live="polite">
+            <p class="reviews-status">Loading reviews...</p>
+        </div>
+    </section>
+
     <!-- Availability Section -->
     <section class="availability-section-wrap" id="availability">
         <div class="availability-section">
@@ -1081,6 +1279,7 @@
                 <ul class="footer-links">
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#amenities">Amenities</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
                     <li><a href="#location">Location</a></li>
                     <li><a href="#availability">Availability</a></li>
                     <a href="https://www.instagram.com/rainiergetaway">
@@ -1165,7 +1364,150 @@
             );
         }
 
+        function Reviews() {
+            const [reviews, setReviews] = useState([]);
+            const [status, setStatus] = useState('Loading reviews...');
+            const [hasError, setHasError] = useState(false);
+            const [reviewPage, setReviewPage] = useState(0);
+            const [expandedReviews, setExpandedReviews] = useState(new Set());
+
+            useEffect(() => {
+                fetch('./data/reviews.json', { cache: 'no-store' })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Reviews returned HTTP ${response.status}`);
+                        }
+
+                        return response.json();
+                    })
+                    .then(data => {
+                        const reviewItems = Array.isArray(data.reviews) ? data.reviews : [];
+                        if (!reviewItems.length) {
+                            throw new Error('No reviews found');
+                        }
+
+                        setReviews(reviewItems);
+                        setStatus('');
+                    })
+                    .catch(error => {
+                        console.error('[Reviews] Review data could not load.', error);
+                        setHasError(true);
+                        setStatus('Reviews are being refreshed. Please check back soon.');
+                    });
+            }, []);
+
+            if (status) {
+                return React.createElement(
+                    'p',
+                    { className: `reviews-status${hasError ? ' error' : ''}` },
+                    status
+                );
+            }
+
+            const toggleReview = reviewId => {
+                setExpandedReviews(current => {
+                    const next = new Set(current);
+                    if (next.has(reviewId)) {
+                        next.delete(reviewId);
+                    } else {
+                        next.add(reviewId);
+                    }
+                    return next;
+                });
+            };
+
+            const pageSize = 3;
+            const pageCount = Math.ceil(reviews.length / pageSize);
+            const pageReviews = reviews.slice(reviewPage * pageSize, (reviewPage + 1) * pageSize);
+            const moveReviewPage = direction => {
+                setReviewPage(currentPage => (currentPage + direction + pageCount) % pageCount);
+            };
+
+            return React.createElement(
+                'div',
+                { className: 'reviews-carousel' },
+                React.createElement(
+                    'button',
+                    {
+                        className: 'review-nav',
+                        type: 'button',
+                        'aria-label': 'Previous reviews',
+                        disabled: pageCount <= 1,
+                        onClick: () => moveReviewPage(-1)
+                    },
+                    '←'
+                ),
+                React.createElement(
+                    'div',
+                    { className: 'reviews-grid' },
+                    pageReviews.map(review => {
+                    const reviewText = String(review.text || '');
+                    const isExpanded = expandedReviews.has(review.id);
+                    const canExpand = reviewText.length > 240;
+
+                    return React.createElement(
+                        'article',
+                        { className: 'review-card', key: review.id },
+                        React.createElement(
+                            'div',
+                            { className: 'review-card-header' },
+                            React.createElement(
+                                'span',
+                                { className: 'review-rating', 'aria-label': `${review.rating} out of 5 stars` },
+                                '★★★★★'
+                            ),
+                            React.createElement('time', { className: 'review-date' }, review.date || '')
+                        ),
+                        React.createElement(
+                            'p',
+                            { className: `review-text${isExpanded ? ' is-expanded' : ''}` },
+                            `“${reviewText}”`
+                        ),
+                        canExpand && React.createElement(
+                            'button',
+                            {
+                                className: 'review-expand',
+                                type: 'button',
+                                'aria-expanded': isExpanded,
+                                onClick: () => toggleReview(review.id)
+                            },
+                            isExpanded ? 'Show less' : 'Read more'
+                        ),
+                        React.createElement('p', { className: 'review-label' }, 'Airbnb guest review')
+                    );
+                    })
+                ),
+                React.createElement(
+                    'button',
+                    {
+                        className: 'review-nav',
+                        type: 'button',
+                        'aria-label': 'Next reviews',
+                        disabled: pageCount <= 1,
+                        onClick: () => moveReviewPage(1)
+                    },
+                    '→'
+                )
+            );
+        }
+
         createRoot(document.getElementById('availability-calendar')).render(React.createElement(AvailabilityCalendar));
+        createRoot(document.getElementById('reviews-carousel')).render(React.createElement(Reviews));
+
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const primaryNavigation = document.getElementById('primary-navigation');
+
+        function closeMobileNavigation() {
+            primaryNavigation.classList.remove('is-open');
+            mobileNavToggle.setAttribute('aria-expanded', 'false');
+            mobileNavToggle.setAttribute('aria-label', 'Open navigation');
+        }
+
+        mobileNavToggle.addEventListener('click', () => {
+            const isOpen = primaryNavigation.classList.toggle('is-open');
+            mobileNavToggle.setAttribute('aria-expanded', String(isOpen));
+            mobileNavToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+        });
 
         // Smooth scroll navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1174,6 +1516,7 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    closeMobileNavigation();
                 }
             });
         });
