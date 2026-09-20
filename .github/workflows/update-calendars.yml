@@ -1,0 +1,158 @@
+name: Update Combined Calendar
+
+on:
+  schedule:
+    # Run every 2 hours = 12 times per day
+    - cron: "0 */2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-calendar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create calendars directory
+        run: mkdir -p calendars
+
+      - name: Download and combine calendars
+        run: |
+          python3 <<'PY'
+          import urllib.request
+          import re
+          from pathlib import Path
+
+          feeds = [
+              {
+                  "label": "Airbnb",
+                  "url": "https://www.airbnb.com/calendar/ical/1501508351751467254.ics?t=d32d3c50b8464dd492ee0a2338106af9"
+              },
+              {
+                  "label": "VRBO",
+                  "url": "https://www.vrbo.com/icalendar/eeda029ab7a2499dab1888bcc8dd8bbf.ics?nonTentative"
+              }
+          ]
+
+          events = []
+
+          for feed in feeds:
+              print(f"Downloading {feed['label']}...")
+
+              request = urllib.request.Request(
+                  feed["url"],
+                  headers={
+                      "User-Agent": "Mozilla/5.0"
+                  }
+              )
+
+              with urllib.request.urlopen(request) as response:
+                  content = response.read().decode("utf-8")
+
+              # Extract VEVENT blocks
+              matches = re.findall(
+                  r"BEGIN:VEVENT.*?END:VEVENT",
+                  content,
+                  re.DOTALL
+              )
+
+              print(f"  Found {len(matches)} events")
+
+              for event in matches:
+                  events.append({
+                      "source": feed["label"],
+                      "content": event
+                  })
+
+          # ---------------------------------------------------------
+          # Deduplicate bookings
+          #
+          # We use DTSTART + DTEND as the primary booking identifier.
+          # This handles Airbnb/VRBO using different UIDs for the
+          # same reservation.
+          # ---------------------------------------------------------
+
+          unique_events = {}
+          duplicates = 0
+
+          for item in events:
+              event = item["content"]
+
+              dtstart_match = re.search(
+                  r"^DTSTART(?:;[^:]*)?:(.+)$",
+                  event,
+                  re.MULTILINE
+              )
+
+              dtend_match = re.search(
+                  r"^DTEND(?:;[^:]*)?:(.+)$",
+                  event,
+                  re.MULTILINE
+              )
+
+              if dtstart_match and dtend_match:
+                  start = dtstart_match.group(1).strip()
+                  end = dtend_match.group(1).strip()
+
+                  # Booking identity = start + end
+                  key = f"{start}|{end}"
+              else:
+                  # If dates cannot be found, fall back to the
+                  # original event contents as the unique key.
+                  key = event
+
+              if key in unique_events:
+                  duplicates += 1
+                  print(
+                      f"Duplicate removed: "
+                      f"{item['source']} {key}"
+                  )
+              else:
+                  unique_events[key] = event
+
+          final_events = list(unique_events.values())
+
+          # ---------------------------------------------------------
+          # Create combined calendar
+          # ---------------------------------------------------------
+
+          calendar = [
+              "BEGIN:VCALENDAR",
+              "VERSION:2.0",
+              "PRODID:-//Combined Airbnb + VRBO Calendar//EN",
+              "CALSCALE:GREGORIAN",
+              "METHOD:PUBLISH",
+          ]
+
+          calendar.extend(final_events)
+          calendar.append("END:VCALENDAR")
+
+          Path("calendars/combined.ics").write_text(
+              "\r\n".join(calendar) + "\r\n",
+              encoding="utf-8"
+          )
+
+          print("")
+          print(f"Total events downloaded: {len(events)}")
+          print(f"Duplicates removed:       {duplicates}")
+          print(f"Final events:             {len(final_events)}")
+          print("Created calendars/combined.ics")
+          PY
+
+      - name: Commit combined calendar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add calendars/combined.ics
+
+          if git diff --cached --quiet; then
+            echo "No calendar changes"
+          else
+            git commit -m "Update combined calendar"
+            git push
+          fi
