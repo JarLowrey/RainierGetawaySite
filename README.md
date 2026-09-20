@@ -1,5 +1,7 @@
 # Rainier Getaway
 
+View it live: https://rainier-getaway.com/
+
 A static website for Rainier Getaway, a mountain retreat near Mount Rainier National Park.
 
 The site includes:
