@@ -1,4 +1,5 @@
-export const AIRBNB_ICAL_URL = 'https://www.airbnb.com/calendar/ical/1501508351751467254.ics?t=d32d3c50b8464dd492ee0a2338106af9';
+const AIRBNB_ICAL_URL = 'https://www.airbnb.com/calendar/ical/1501508351751467254.ics?t=d32d3c50b8464dd492ee0a2338106af9';
+export const AVAILABILITY_PROXY_URL = `https://api.allorigins.win/raw?url=${encodeURIComponent(AIRBNB_ICAL_URL)}`;
 
 export function parseIcalDate(value) {
     const dateValue = value.split(':').pop().trim();
@@ -48,8 +49,8 @@ export function parseUnavailableDates(icalText) {
 
 export async function fetchIcalFeed(fetchImplementation = fetch) {
     try {
-        console.info('[Availability] Loading Airbnb iCal feed...');
-        const response = await fetchImplementation(AIRBNB_ICAL_URL, { cache: 'no-store' });
+        console.info('[Availability] Loading availability through AllOrigins...');
+        const response = await fetchImplementation(AVAILABILITY_PROXY_URL, { cache: 'no-store' });
         if (!response.ok) {
             throw new Error(`Availability feed returned HTTP ${response.status}`);
         }
@@ -59,10 +60,10 @@ export async function fetchIcalFeed(fetchImplementation = fetch) {
             throw new Error('Invalid availability feed');
         }
 
-        console.info('[Availability] Loaded successfully from Airbnb iCal feed.');
+        console.info('[Availability] Loaded successfully through AllOrigins.');
         return icalText;
     } catch (error) {
-        console.error('[Availability] Airbnb iCal feed failed.', error);
+        console.error('[Availability] AllOrigins availability request failed.', error);
         throw error;
     }
 }

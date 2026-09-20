@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
+    AVAILABILITY_PROXY_URL,
     dateKey,
     fetchIcalFeed,
     parseIcalDate,
@@ -62,9 +63,10 @@ test('fetches the first valid iCal source', async () => {
 
     assert.equal(await fetchIcalFeed(fetchImplementation), sampleIcal);
     assert.equal(calls.length, 1);
+    assert.equal(calls[0], AVAILABILITY_PROXY_URL);
 });
 
-test('propagates a direct feed failure without trying another source', async () => {
+test('uses only the AllOrigins proxy when the request fails', async () => {
     const calls = [];
     const fetchImplementation = async url => {
         calls.push(url);
@@ -73,6 +75,7 @@ test('propagates a direct feed failure without trying another source', async () 
 
     await assert.rejects(fetchIcalFeed(fetchImplementation), /CORS blocked/);
     assert.equal(calls.length, 1);
+    assert.equal(calls[0], AVAILABILITY_PROXY_URL);
 });
 
 test('rejects a successful response that is not iCal', async () => {
