@@ -1374,7 +1374,7 @@
     </footer>
 
     <script type="module">
-        import React, { useEffect, useState } from 'https://esm.sh/react@18.3.1';
+        import React, { useEffect, useRef, useState } from 'https://esm.sh/react@18.3.1';
         import { createRoot } from 'https://esm.sh/react-dom@18.3.1/client';
         import Calendar from 'https://esm.sh/react-calendar@5.1.0?deps=react@18.3.1';
 
@@ -1443,6 +1443,8 @@
             const [hasError, setHasError] = useState(false);
             const [reviewPage, setReviewPage] = useState(0);
             const [expandedReviews, setExpandedReviews] = useState(new Set());
+            const [overflowingReviews, setOverflowingReviews] = useState(new Set());
+            const reviewTextRefs = useRef({});
 
             useEffect(() => {
                 fetch('./data/reviews.json', { cache: 'no-store' })
@@ -1469,14 +1471,6 @@
                     });
             }, []);
 
-            if (status) {
-                return React.createElement(
-                    'p',
-                    { className: `reviews-status${hasError ? ' error' : ''}` },
-                    status
-                );
-            }
-
             const toggleReview = reviewId => {
                 setExpandedReviews(current => {
                     const next = new Set(current);
@@ -1492,6 +1486,48 @@
             const pageSize = 3;
             const pageCount = Math.ceil(reviews.length / pageSize);
             const pageReviews = reviews.slice(reviewPage * pageSize, (reviewPage + 1) * pageSize);
+
+            useEffect(() => {
+                const measureOverflow = () => {
+                    setOverflowingReviews(current => {
+                        const overflowing = new Set(current);
+                        let changed = false;
+
+                        pageReviews.forEach(review => {
+                            if (expandedReviews.has(review.id)) {
+                                return;
+                            }
+
+                            const element = reviewTextRefs.current[review.id];
+                            const isOverflowing = element && element.scrollHeight > element.clientHeight + 1;
+                            const wasOverflowing = overflowing.has(review.id);
+
+                            if (isOverflowing && !wasOverflowing) {
+                                overflowing.add(review.id);
+                                changed = true;
+                            } else if (!isOverflowing && wasOverflowing) {
+                                overflowing.delete(review.id);
+                                changed = true;
+                            }
+                        });
+
+                        return changed ? overflowing : current;
+                    });
+                };
+
+                measureOverflow();
+                window.addEventListener('resize', measureOverflow);
+                return () => window.removeEventListener('resize', measureOverflow);
+            }, [reviewPage, reviews, expandedReviews]);
+
+            if (status) {
+                return React.createElement(
+                    'p',
+                    { className: `reviews-status${hasError ? ' error' : ''}` },
+                    status
+                );
+            }
+
             const moveReviewPage = direction => {
                 setReviewPage(currentPage => (currentPage + direction + pageCount) % pageCount);
             };
@@ -1517,7 +1553,7 @@
                     pageReviews.map(review => {
                     const reviewText = String(review.text || '');
                     const isExpanded = expandedReviews.has(review.id);
-                    const canExpand = reviewText.length > 240;
+                    const canExpand = overflowingReviews.has(review.id);
 
                     return React.createElement(
                         'article',
@@ -1534,7 +1570,16 @@
                         ),
                         React.createElement(
                             'p',
-                            { className: `review-text${isExpanded ? ' is-expanded' : ''}` },
+                            {
+                                className: `review-text${isExpanded ? ' is-expanded' : ''}`,
+                                ref: element => {
+                                    if (element) {
+                                        reviewTextRefs.current[review.id] = element;
+                                    } else {
+                                        delete reviewTextRefs.current[review.id];
+                                    }
+                                }
+                            },
                             `“${reviewText}”`
                         ),
                         canExpand && React.createElement(
