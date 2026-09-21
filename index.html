@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
@@ -10,11 +11,102 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rainier Getaway - Luxury Mountain Retreat</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/react-calendar@5.1.0/dist/Calendar.css">
+
+    <meta name="description"
+        content="Spacious Mount Rainier vacation rental in Ashford, Washington. Sleeps 12 with 4 bedrooms, game lofts, hot tub, gym, sauna, and easy access to Mount Rainier National Park.">
+    <meta name="keywords"
+        content="large group vacation rental Mount Rainier, family cabin Ashford WA, Pacific Northwest getaway, Mount Rainier lodging, friends getaway Washington">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a1a1a">
+    <link rel="canonical" href="https://rainier-getaway.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Large Group Vacation Rental Near Mount Rainier">
+    <meta property="og:description"
+        content="Gather with family and friends at a spacious Ashford, Washington retreat near Mount Rainier National Park. Sleeps 12.">
+    <meta property="og:url" content="https://rainier-getaway.com/">
+    <meta property="og:image" content="https://rainier-getaway.com/images/hero.jpg">
+    <meta property="og:image:alt" content="Rainier Getaway vacation rental near Mount Rainier National Park">
+    <meta property="og:site_name" content="Rainier Getaway">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Large Group Vacation Rental Near Mount Rainier">
+    <meta name="twitter:description"
+        content="Gather with family and friends at a spacious Ashford, Washington retreat near Mount Rainier National Park. Sleeps 12.">
+    <meta name="twitter:image" content="https://rainier-getaway.com/images/hero.jpg">
+
+    <title>Large Group Vacation Rental Near Mount Rainier | Rainier Getaway</title>
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "VacationRental",
+        "name": "Rainier Getaway",
+            "url": "https://rainier-getaway.com/",
+        "description": "Large group vacation rental near Mount Rainier National Park in Ashford, Washington.",
+        "image": [
+                "https://rainier-getaway.com/images/hero.jpg",
+                "https://rainier-getaway.com/images/rainier.jpg"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ashford",
+            "addressRegion": "WA",
+            "addressCountry": "US"
+        },
+        "occupancy": {
+            "@type": "QuantitativeValue",
+            "maxValue": 12
+        },
+        "amenityFeature": [
+            { "@type": "LocationFeatureSpecification", "name": "Hot tub", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Private gym", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Game rooms", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Sauna", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Pet-friendly", "value": true }
+        ]
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+            "@type": "Question",
+            "name": "How many guests can stay at Rainier Getaway?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Rainier Getaway accommodates up to 12 guests across four bedrooms and six beds."
+            }
+            },
+            {
+            "@type": "Question",
+            "name": "How close is the home to Mount Rainier National Park?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The home is approximately 5 miles, or 10 minutes, from the Nisqually entrance."
+            }
+            },
+            {
+            "@type": "Question",
+            "name": "Is Rainier Getaway suitable for large groups?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The home is designed for families, friends, reunions, retreats, and weekend getaways."
+            }
+            }
+        ]
+        }
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -40,9 +132,9 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .icon { 
-            height:48px;
-            width:48px;
+        .icon {
+            height: 48px;
+            width: 48px;
         }
 
         /* Navigation */
@@ -57,19 +149,19 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
 
         nav.scrolled {
             padding: 1rem 5%;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
         }
 
         .logo {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.65rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
             font-weight: 600;
@@ -77,21 +169,21 @@
             color: var(--primary);
         }
 
-            .logo-icon {
-                width: 2.25rem;
-                height: 2.25rem;
-                object-fit: contain;
-            }
+        .logo-icon {
+            width: 2.25rem;
+            height: 2.25rem;
+            object-fit: contain;
+        }
 
-            .logo-text {
-                white-space: nowrap;
-            }
+        .logo-text {
+            white-space: nowrap;
+        }
 
         .nav-links {
             display: flex;
             gap: 2.5rem;
             align-items: center;
-            
+
             .nav-cta {
                 background: var(--primary);
                 color: white;
@@ -164,7 +256,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 100%);
         }
 
         .hero-content {
@@ -225,7 +317,7 @@
         .hero-cta:hover {
             background: var(--accent);
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
         @keyframes fadeInUp {
@@ -233,6 +325,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -243,14 +336,14 @@
         .stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            border-top: 1px solid rgba(0,0,0,0.1);
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .stat {
             padding: 3rem 2rem;
             text-align: center;
-            border-right: 1px solid rgba(0,0,0,0.1);
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .stat:last-child {
@@ -455,7 +548,7 @@
             position: relative;
             font-size: 1rem;
             color: var(--secondary);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .amenity-list li:last-child {
@@ -516,7 +609,7 @@
         .highlight-content p {
             font-size: 1.1rem;
             line-height: 1.9;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 1.5rem;
         }
 
@@ -533,7 +626,7 @@
         }
 
         .cta-section .section-description {
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .availability-section-wrap {
@@ -572,7 +665,7 @@
         }
 
         .availability-calendar .react-calendar__tile--now {
-            background: rgba(201,168,114,0.25);
+            background: rgba(201, 168, 114, 0.25);
         }
 
         .availability-calendar .react-calendar__tile--active {
@@ -762,11 +855,11 @@
             margin: 0 auto;
             padding: 2.5rem;
             text-align: left;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             font-size: 1rem;
             line-height: 1.8;
-            border: 1px solid rgba(255,255,255,0.2);
-            background: rgba(0,0,0,0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.12);
         }
 
         .booking-details-title {
@@ -782,7 +875,7 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.25);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
         }
 
         .booking-tab {
@@ -790,7 +883,7 @@
             border-bottom: 3px solid transparent;
             padding: 0.75rem 1rem;
             background: transparent;
-            color: rgba(255,255,255,0.65);
+            color: rgba(255, 255, 255, 0.65);
             cursor: pointer;
             font: inherit;
             font-weight: 600;
@@ -819,7 +912,7 @@
             display: none;
         }
 
-        .booking-details > .cta-button {
+        .booking-details>.cta-button {
             display: block;
             width: max-content;
             margin: 2rem auto;
@@ -842,7 +935,7 @@
         }
 
         .platform-booking p {
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 0.75rem;
         }
 
@@ -862,7 +955,7 @@
             font-size: 0.9rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            margin:0.5rem;
+            margin: 0.5rem;
             margin-top: 2rem;
             transition: all 0.4s ease;
         }
@@ -871,7 +964,7 @@
             background: var(--accent);
             color: var(--primary);
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
         /* Footer */
@@ -891,12 +984,12 @@
 
         .footer-brand h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;    
+            font-size: 2rem;
             margin-bottom: 1rem;
         }
 
         .footer-brand p {
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
             line-height: 1.8;
             font-size: 0.95rem;
         }
@@ -918,7 +1011,7 @@
         }
 
         .footer-links a {
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
             font-size: 0.95rem;
             transition: color 0.3s ease;
@@ -931,8 +1024,8 @@
         .footer-bottom {
             text-align: center;
             padding-top: 3rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.4);
             font-size: 0.85rem;
         }
 
@@ -974,14 +1067,14 @@
                 display: block;
             }
 
-                .logo-icon {
-                    width: 2.5rem;
-                    height: 2.5rem;
-                }
+            .logo-icon {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
 
-                .logo-text {
-                    font-size: 1.25rem;
-                }
+            .logo-text {
+                font-size: 1.25rem;
+            }
 
             .nav-links {
                 position: absolute;
@@ -1078,6 +1171,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav id="nav">
@@ -1085,12 +1179,14 @@
             <img class="logo-icon" src="images/favicon/favicon.svg" alt="Rainier Getaway icon">
             <span class="logo-text">Rainier Getaway</span>
         </div>
-        <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">&#9776;</button>
+        <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"
+            aria-label="Open navigation">&#9776;</button>
         <div class="nav-links" id="primary-navigation">
             <a href="#gallery">Gallery</a>
             <a href="#amenities">Amenities</a>
             <a href="#reviews">Reviews</a>
-            <a href="#availability" class="availability-nav-link" aria-label="Check availability" title="Check availability">&#128197;</a>
+            <a href="#availability" class="availability-nav-link" aria-label="Check availability"
+                title="Check availability">&#128197;</a>
             <a href="https://www.instagram.com/rainiergetaway">
                 <img src="images/instagram-icon.png" alt="instagram icon" class="icon">
             </a>
@@ -1100,19 +1196,22 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <img src="images/hero.jpg" alt="Rainier Getaway Exterior" class="hero-image">
+        <img src="images/hero.jpg" alt="Rainier Getaway exterior near Mount Rainier National Park" class="hero-image">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="hero-subtitle">Mount Rainier National Park</div>
-            <h1>Your Mountain Escape Awaits</h1>
-            <p class="hero-description">Experience luxury and adventure in our fully-equipped mountain retreat. Sleeps 12 with premium amenities, private gym, two game lofts, and hot tub.</p>
-            <a href="#availability" class="hero-cta">View Availability</a>
+            <div class="hero-subtitle">Ashford, Washington · Near Mount Rainier National Park</div>
+            <h1>Your Rainier Retreat Awaits</h1>
+            <p class="hero-description">
+                Experience luxury and adventure in ourfully equipped Pacific Northwest vacation home.
+                Sleeps 12 with game lofts, a private gym, sauna, hot tub, and easy access to Mount Rainier.
+            </p>
+            <a href="#availability" class="hero-cta">Check Availability</a>
         </div>
     </section>
 
     <!-- Stats Bar -->
     <div class="stats">
-        <div class="stat">  
+        <div class="stat">
             <div class="stat-number">12</div>
             <div class="stat-label">Max guests</div>
         </div>
@@ -1135,7 +1234,8 @@
         <div class="section-header">
             <div class="section-tag">Why Choose Us</div>
             <h2 class="section-title">Designed for Memorable Gatherings</h2>
-            <p class="section-description">Whether you're planning a family reunion, friend's retreat, or team getaway, our property offers everything you need for an unforgettable mountain experience.</p>
+            <p class="section-description">Whether you're planning a family reunion, friend's retreat, or team getaway,
+                our property offers everything you need for an unforgettable mountain experience.</p>
         </div>
         <div class="features-grid">
             <div class="feature">
@@ -1146,13 +1246,21 @@
             <div class="feature">
                 <div class="feature-icon">🎯</div>
                 <h3>Entertainment Hub</h3>
-                <p>Two game lofts offer pool, ping pong, air hockey, arcade games, mini golf, foosball, and more, plus a private gym and hot tub.</p>
+                <p>Two game lofts offer pool, ping pong, air hockey, arcade games, mini golf, foosball, and more, plus a
+                    private gym and hot tub.</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">✨</div>
                 <h3>Premium Comfort</h3>
-                <p>Modern amenities meet rustic charm with exposed timber beams, gourmet kitchen, and luxurious furnishings.</p>
+                <p>Modern amenities meet rustic charm with exposed timber beams, gourmet kitchen, and luxurious
+                    furnishings.</p>
             </div>
+            <!-- <div class="feature">
+                <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                <h3>Family and Friends Getaway Near the Mountains</h3>
+                <p>Planning a family reunion, multigenerational vacation, friends getaway, or Pacific Northwest
+                    weekend trip? Rainier Getaway gives your group room to relax, cook, play, and explore together.</p>
+            </div> -->
         </div>
     </section>
 
@@ -1164,31 +1272,36 @@
         </div>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="images/ai_photos_4_25/garage game room/ChatGPT Image Sep 20, 2026, 02_27_15 PM.png" alt="Game Loft">
+                <img src="images/ai_photos_4_25/garage game room/ChatGPT Image Sep 20, 2026, 02_27_15 PM.png"
+                    alt="Game Loft">
             </div>
             <div class="gallery-item">
                 <img src="images/ai_photos_4_25/exterior/Gemini_Generated_Image_6h0r876h0r876h0r.jpeg" alt="Hot Tub">
             </div>
             <div class="gallery-item">
-                <img src="images/ai_photos_4_25/dining room/Gemini_Generated_Image_z3eb0sz3eb0sz3eb.png" alt="Dining Room">
+                <img src="images/ai_photos_4_25/dining room/Gemini_Generated_Image_z3eb0sz3eb0sz3eb.png"
+                    alt="Dining Room">
             </div>
             <div class="gallery-item">
                 <img src="images/ai_photos_4_25/kitchen/Gemini_Generated_Image_p31bpcp31bpcp31b.png" alt="Kitchen">
             </div>
-            <div class="gallery-item">  
-                <img src="images/ai_photos_4_25/bedroom mstr/Gemini_Generated_Image_ky5f6tky5f6tky5f.png" alt="Master Bedroom">
+            <div class="gallery-item">
+                <img src="images/ai_photos_4_25/bedroom mstr/Gemini_Generated_Image_ky5f6tky5f6tky5f.png"
+                    alt="Master Bedroom">
             </div>
             <div class="gallery-item">
                 <img src="images/ai_photos_4_25/gym/image_1782411481516679.png" alt="Private Gym">
             </div>
             <div class="gallery-item">
-                <img src="images/ai_photos_4_25/bedroom mstr/Gemini_Generated_Image_uapiaruapiaruapi.png" alt="Work desk with moutain view">
+                <img src="images/ai_photos_4_25/bedroom mstr/Gemini_Generated_Image_uapiaruapiaruapi.png"
+                    alt="Work desk with moutain view">
             </div>
             <div class="gallery-item">
                 <img src="images/ai_photos_4_25/living room/image_1782412640625740.png" alt="Living Room">
             </div>
             <div class="gallery-item">
-                <img src="images/ai_photos_4_25/upstairs/image_1782413036781692.png" alt="Arcade room with foosball and basketball">
+                <img src="images/ai_photos_4_25/upstairs/image_1782413036781692.png"
+                    alt="Arcade room with foosball and basketball">
             </div>
         </div>
     </section>
@@ -1198,7 +1311,8 @@
         <div class="section-header">
             <div class="section-tag">Amenities</div>
             <h2 class="section-title">Everything You Need</h2>
-            <p class="section-description">Our property is equipped with premium amenities to ensure comfort, entertainment, and unforgettable experiences.</p>
+            <p class="section-description">Our property is equipped with premium amenities to ensure comfort,
+                entertainment, and unforgettable experiences.</p>
         </div>
         <div class="amenities-grid">
             <div class="amenity-category">
@@ -1225,7 +1339,8 @@
             <div class="amenity-category">
                 <h3>Recreation & Wellness</h3>
                 <ul class="amenity-list">
-                    <li>Game Loft 1: Pool table, ping pong, air hockey, mini basketball, child-safe darts, seating, TV, and mini fridge</li>
+                    <li>Game Loft 1: Pool table, ping pong, air hockey, mini basketball, child-safe darts, seating, TV,
+                        and mini fridge</li>
                     <li>Game Loft 2: Foosball, arcade games, mini golf, and gaming table</li>
                     <li>Private gym with treadmill, rowing machine, free weights, and punching bag</li>
                     <li>6-person infrared sauna with radio</li>
@@ -1248,14 +1363,18 @@
         <!-- Location Highlight -->
         <div class="highlight-section">
             <div class="highlight-image">
-                <img src="images/rainier.jpg" alt="Mountain Views">
+                <img src="images/rainier.jpg"
+                    alt="Mountain view near Mount Rainier National Park from the Ashford vacation rental">
             </div>
             <div class="highlight-content">
                 <div class="section-tag">Location</div>
                 <h2 class="section-title">Gateway to Mt. Rainier</h2>
                 <p><strong>5 miles (10 min) to Nisqually entrance</strong></p>
-                <p>Located in Ashford, Washington, our property sits at the doorstep of one of America's most iconic national parks. Wake up to stunning mountain views, explore pristine trails, and return to comfort and luxury.</p>
-                <p>Whether you're seeking adventure or relaxation, you'll find the perfect balance here. From hiking and wildlife viewing to cozy evenings by the fire, every moment becomes a memory.</p>
+                <p>Located in Ashford, Washington, our property sits at the doorstep of one of America's most iconic
+                    national parks. Wake up to stunning mountain views, explore pristine trails, and return to comfort
+                    and luxury.</p>
+                <p>Whether you're seeking adventure or relaxation, you'll find the perfect balance here. From hiking and
+                    wildlife viewing to cozy evenings by the fire, every moment becomes a memory.</p>
             </div>
         </div>
     </section>
@@ -1265,7 +1384,8 @@
         <div class="section-header">
             <div class="section-tag">Guest Reviews</div>
             <h2 class="section-title">Here's what people are saying</h2>
-            <p class="section-description">A few words from guests who have made Rainier Getaway part of their mountain story.</p>
+            <p class="section-description">A few words from guests who have made Rainier Getaway part of their mountain
+                story.</p>
         </div>
         <div id="reviews-carousel" aria-live="polite">
             <p class="reviews-status">Loading reviews...</p>
@@ -1289,13 +1409,18 @@
     <section class="cta-section" id="book-now">
         <h2 class="section-title">Book Now</h2>
         <div class="booking-details">
-        <h3 class="booking-details-title">Book Direct With Confidence and Save 10%</h3>
-        <a href="https://docs.google.com/forms/d/1P4zrzBh5_M9ItTD8iGvubHM_zeDbUCXZ_BLdG_O9oxI" target="_blank" class="cta-button">Book Direct</a>
+            <h3 class="booking-details-title">Book Direct With Confidence and Save 10%</h3>
+            <a href="https://docs.google.com/forms/d/1P4zrzBh5_M9ItTD8iGvubHM_zeDbUCXZ_BLdG_O9oxI" target="_blank"
+                class="cta-button">Book Direct</a>
             <div class="booking-tabs" role="tablist" aria-label="Direct booking details">
-                <button class="booking-tab" id="deposit-tab" role="tab" aria-selected="true" aria-controls="deposit-panel" tabindex="0">Damage Deposit</button>
-                <button class="booking-tab" id="payment-tab" role="tab" aria-selected="false" aria-controls="payment-panel" tabindex="-1">Payment Terms</button>
-                <button class="booking-tab" id="cancellation-tab" role="tab" aria-selected="false" aria-controls="cancellation-panel" tabindex="-1">Cancellations</button>
-                <button class="booking-tab" id="non-refundable-tab" role="tab" aria-selected="false" aria-controls="non-refundable-panel" tabindex="-1">Non-refundable Option</button>
+                <button class="booking-tab" id="deposit-tab" role="tab" aria-selected="true"
+                    aria-controls="deposit-panel" tabindex="0">Damage Deposit</button>
+                <button class="booking-tab" id="payment-tab" role="tab" aria-selected="false"
+                    aria-controls="payment-panel" tabindex="-1">Payment Terms</button>
+                <button class="booking-tab" id="cancellation-tab" role="tab" aria-selected="false"
+                    aria-controls="cancellation-panel" tabindex="-1">Cancellations</button>
+                <button class="booking-tab" id="non-refundable-tab" role="tab" aria-selected="false"
+                    aria-controls="non-refundable-panel" tabindex="-1">Non-refundable Option</button>
             </div>
 
             <div class="booking-panel" id="deposit-panel" role="tabpanel" aria-labelledby="deposit-tab" tabindex="0">
@@ -1303,7 +1428,8 @@
                 <p>The deposit is refunded after your stay, provided there is no damage to the property.</p>
             </div>
 
-            <div class="booking-panel" id="payment-panel" role="tabpanel" aria-labelledby="payment-tab" tabindex="0" hidden>
+            <div class="booking-panel" id="payment-panel" role="tabpanel" aria-labelledby="payment-tab" tabindex="0"
+                hidden>
                 <p><strong>30% due to reserve your dates</strong></p>
                 <p>The remaining balance is due 90 days before check-in.</p>
                 <p>Choose the payment method that works best for you:</p>
@@ -1314,7 +1440,8 @@
                 </ul>
             </div>
 
-            <div class="booking-panel" id="cancellation-panel" role="tabpanel" aria-labelledby="cancellation-tab" tabindex="0" hidden>
+            <div class="booking-panel" id="cancellation-panel" role="tabpanel" aria-labelledby="cancellation-tab"
+                tabindex="0" hidden>
                 <p>Damage deposit will always be 100% refunded if you cancel before check-in.</p>
                 <p>Trip payment refund depends on how far in advance of your check-in day you cancel:</p>
                 <ul>
@@ -1324,11 +1451,14 @@
                 </ul>
             </div>
 
-            <div class="booking-panel" id="non-refundable-panel" role="tabpanel" aria-labelledby="non-refundable-tab" tabindex="0" hidden>
+            <div class="booking-panel" id="non-refundable-panel" role="tabpanel" aria-labelledby="non-refundable-tab"
+                tabindex="0" hidden>
                 <p>If you choose this option, the full amount is due at time of booking.</p>
-                <p>No refunds for trip payments will be issued for cancellations made after the booking is confirmed.</p>
+                <p>No refunds for trip payments will be issued for cancellations made after the booking is confirmed.
+                </p>
                 <p>A 10% discount will be applied.</p>
-                <p>NOTE: Damage deposit will also be due upfront, but will be refunded if you cancel before check-in.</p>
+                <p>NOTE: Damage deposit will also be due upfront, but will be refunded if you cancel before check-in.
+                </p>
             </div>
         </div>
         <div class="platform-booking">
@@ -1340,13 +1470,52 @@
             </div>
         </div>
     </section>
+    <section class="section" id="faq">
+        <div class="section-header">
+            <div class="section-tag">Frequently Asked Questions</div>
+            <h2 class="section-title">Planning Your Mount Rainier Stay</h2>
+        </div>
+
+        <div class="booking-details"
+            style="background: var(--light); color: var(--secondary); border-color: rgba(0,0,0,0.1);">
+            <h3 class="booking-details-title" style="color: var(--primary);">
+                Group and Family Lodging Questions
+            </h3>
+
+            <h3>How many guests can stay at Rainier Getaway?</h3>
+            <p>Rainier Getaway accommodates up to 12 guests across four bedrooms and six beds.</p>
+
+            <h3>How close is the home to Mount Rainier National Park?</h3>
+            <p>The home is approximately 5 miles, or 10 minutes, from the Nisqually entrance.</p>
+
+            <h3>Is this a good vacation rental for families?</h3>
+            <p>
+                Yes. The property includes family-friendly entertainment, a full kitchen,
+                multiple gathering spaces, outdoor amenities, and room for multigenerational groups.
+            </p>
+
+            <h3>Is Rainier Getaway suitable for friends or large groups?</h3>
+            <p>
+                Yes. The home is designed for groups of friends, family reunions, retreats,
+                and weekend getaways in Washington's Pacific Northwest.
+            </p>
+
+            <h3>What amenities are available?</h3>
+            <p>
+                Amenities include two game lofts, a private gym, sauna, hot tub, fire pit,
+                gourmet kitchen, Wi-Fi, laundry, and ample parking.
+            </p>
+        </div>
+    </section>
+
 
     <!-- Footer -->
     <footer>
         <div class="footer-grid">
             <div class="footer-brand">
                 <h3>Rainier Getaway</h3>
-                <p>Your luxury mountain retreat near Mt. Rainier National Park. Experience unforgettable moments with family and friends in the heart of the Pacific Northwest.</p>
+                <p>Your luxury mountain retreat near Mt. Rainier National Park. Experience unforgettable moments with
+                    family and friends in the heart of the Pacific Northwest.</p>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
@@ -1369,7 +1538,8 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Rainier Getaway LLC. All rights reserved.</p>
-            <p><a href="https://github.com/JarLowrey/RainierGetawaySite" target="_blank" rel="noopener noreferrer">GitHub Repo</a></p>
+            <p><a href="https://github.com/JarLowrey/RainierGetawaySite" target="_blank"
+                    rel="noopener noreferrer">GitHub Repo</a></p>
         </div>
     </footer>
 
@@ -1551,49 +1721,49 @@
                     'div',
                     { className: 'reviews-grid' },
                     pageReviews.map(review => {
-                    const reviewText = String(review.text || '');
-                    const isExpanded = expandedReviews.has(review.id);
-                    const canExpand = overflowingReviews.has(review.id);
+                        const reviewText = String(review.text || '');
+                        const isExpanded = expandedReviews.has(review.id);
+                        const canExpand = overflowingReviews.has(review.id);
 
-                    return React.createElement(
-                        'article',
-                        { className: 'review-card', key: review.id },
-                        React.createElement(
-                            'div',
-                            { className: 'review-card-header' },
+                        return React.createElement(
+                            'article',
+                            { className: 'review-card', key: review.id },
                             React.createElement(
-                                'span',
-                                { className: 'review-rating', 'aria-label': `${review.rating} out of 5 stars` },
-                                '★★★★★'
+                                'div',
+                                { className: 'review-card-header' },
+                                React.createElement(
+                                    'span',
+                                    { className: 'review-rating', 'aria-label': `${review.rating} out of 5 stars` },
+                                    '★★★★★'
+                                ),
+                                React.createElement('time', { className: 'review-date' }, review.date || '')
                             ),
-                            React.createElement('time', { className: 'review-date' }, review.date || '')
-                        ),
-                        React.createElement(
-                            'p',
-                            {
-                                className: `review-text${isExpanded ? ' is-expanded' : ''}`,
-                                ref: element => {
-                                    if (element) {
-                                        reviewTextRefs.current[review.id] = element;
-                                    } else {
-                                        delete reviewTextRefs.current[review.id];
+                            React.createElement(
+                                'p',
+                                {
+                                    className: `review-text${isExpanded ? ' is-expanded' : ''}`,
+                                    ref: element => {
+                                        if (element) {
+                                            reviewTextRefs.current[review.id] = element;
+                                        } else {
+                                            delete reviewTextRefs.current[review.id];
+                                        }
                                     }
-                                }
-                            },
-                            `“${reviewText}”`
-                        ),
-                        canExpand && React.createElement(
-                            'button',
-                            {
-                                className: 'review-expand',
-                                type: 'button',
-                                'aria-expanded': isExpanded,
-                                onClick: () => toggleReview(review.id)
-                            },
-                            isExpanded ? 'Show less' : 'Read more'
-                        ),
-                        React.createElement('p', { className: 'review-label' }, 'Airbnb guest review')
-                    );
+                                },
+                                `“${reviewText}”`
+                            ),
+                            canExpand && React.createElement(
+                                'button',
+                                {
+                                    className: 'review-expand',
+                                    type: 'button',
+                                    'aria-expanded': isExpanded,
+                                    onClick: () => toggleReview(review.id)
+                                },
+                                isExpanded ? 'Show less' : 'Read more'
+                            ),
+                            React.createElement('p', { className: 'review-label' }, 'Airbnb guest review')
+                        );
                     })
                 ),
                 React.createElement(
