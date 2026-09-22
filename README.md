@@ -70,6 +70,8 @@ The website itself does not request Airbnb or VRBO directly. It reads only the g
 
 The GitHub Actions workflow `.github/workflows/update-reviews.yml` opens the Airbnb reviews dialog, collects the review responses, filters five-star reviews, and writes them to `data/reviews.json`. It runs weekly on Sunday at 00:30 UTC and can also be started manually with the `workflow_dispatch` trigger.
 
+The GitHub Actions workflow `.github/workflows/update-airbnb-images.yml` scrapes the first nine full-resolution listing images, waits 15-25 seconds between image downloads, and writes them as `images/airbnb_images/1` through `9` with their image extensions. It runs monthly and can also be started manually with the `workflow_dispatch` trigger.
+
 ## Project Structure
 
 ```text
@@ -83,4 +85,8 @@ data/combined_calendar.ics         Generated merged availability calendar
                                     Scheduled Airbnb review update workflow
 scripts/fetch-airbnb-reviews.mjs    Airbnb review scraper
 data/reviews.json                   Generated five-star review data
+.github/workflows/update-airbnb-images.yml
+                                    Scheduled Airbnb image update workflow
+scripts/fetch-airbnb-images.mjs     Airbnb listing image scraper
+images/airbnb_images/               Generated numbered listing images
 ```

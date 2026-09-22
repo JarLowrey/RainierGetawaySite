@@ -1,0 +1,45 @@
+name: Update Airbnb Images
+
+on:
+  schedule:
+    # Run monthly at 9:30 AM PST on the first day (GitHub Actions uses UTC).
+    - cron: "30 17 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-images:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install browser scraper
+        run: npm install --no-save playwright@1.55.0
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Pull top Airbnb listing images
+        run: node scripts/fetch-airbnb-images.mjs
+
+      - name: Commit Airbnb images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/airbnb_images
+
+          if git diff --cached --quiet; then
+            echo "No image changes"
+          else
+            git commit -m "Update Airbnb listing images"
+            git push
+          fi

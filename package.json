@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test availability.test.js scripts/fetch-airbnb-reviews.test.mjs"
+    "test": "node --test availability.test.js scripts/fetch-airbnb-reviews.test.mjs scripts/fetch-airbnb-images.test.mjs"
   }
 }
