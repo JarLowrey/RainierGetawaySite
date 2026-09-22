@@ -2,7 +2,8 @@ name: Update Airbnb Reviews
 
 on:
   schedule:
-    - cron: "30 0 * * 0"
+    # 9:00 AM PST on the first day of each month (GitHub Actions uses UTC).
+    - cron: "0 17 1 * *"
   workflow_dispatch:
 
 permissions:

@@ -520,6 +520,7 @@
         /* Amenities Section */
         .amenities {
             background: var(--light);
+            padding-bottom: 0;
         }
 
         .amenities-grid {
@@ -680,16 +681,6 @@
             background: var(--forest);
         }
 
-        .availability-calendar .weekend-date {
-            background: transparent;
-            color: #24506a;
-        }
-
-        .availability-calendar .unavailable-date {
-            background: #eadfda;
-            color: #8b3f32;
-        }
-
         .availability-status {
             margin-top: 1rem;
             color: var(--secondary);
@@ -729,7 +720,7 @@
         .review-card {
             display: flex;
             flex-direction: column;
-            min-height: 285px;
+            min-height: 340px;
             padding: 2rem;
             background: var(--white);
             border-top: 3px solid var(--accent);
@@ -1430,23 +1421,20 @@
             <a href="https://docs.google.com/forms/d/1P4zrzBh5_M9ItTD8iGvubHM_zeDbUCXZ_BLdG_O9oxI" target="_blank"
                 class="cta-button">Book Direct</a>
             <div class="booking-tabs" role="tablist" aria-label="Direct booking details">
-                <button class="booking-tab" id="deposit-tab" role="tab" aria-selected="true"
-                    aria-controls="deposit-panel" tabindex="0">Damage Deposit</button>
-                <button class="booking-tab" id="payment-tab" role="tab" aria-selected="false"
-                    aria-controls="payment-panel" tabindex="-1">Payment Terms</button>
+                <button class="booking-tab" id="payment-tab" role="tab" aria-selected="true"
+                    aria-controls="payment-panel" tabindex="0">Payments</button>
                 <button class="booking-tab" id="cancellation-tab" role="tab" aria-selected="false"
                     aria-controls="cancellation-panel" tabindex="-1">Cancellations</button>
                 <button class="booking-tab" id="non-refundable-tab" role="tab" aria-selected="false"
                     aria-controls="non-refundable-panel" tabindex="-1">Non-refundable Option</button>
-            </div>
-
-            <div class="booking-panel" id="deposit-panel" role="tabpanel" aria-labelledby="deposit-tab" tabindex="0">
-                <p><strong>$800 refundable damage deposit</strong></p>
-                <p>The deposit is refunded after your stay, provided there is no damage to the property.</p>
+                <button class="booking-tab" id="misc-tab" role="tab" aria-selected="false"
+                    aria-controls="misc-panel" tabindex="-1">Terms</button>
+                <button class="booking-tab" id="deposit-tab" role="tab" aria-selected="false"
+                    aria-controls="deposit-panel" tabindex="-1">Deposit</button>
             </div>
 
             <div class="booking-panel" id="payment-panel" role="tabpanel" aria-labelledby="payment-tab" tabindex="0"
-                hidden>
+                >
                 <p><strong>30% due to reserve your dates</strong></p>
                 <p>The remaining balance is due 90 days before check-in.</p>
                 <p>Choose the payment method that works best for you:</p>
@@ -1473,9 +1461,27 @@
                 <p>If you choose this option, the full amount is due at time of booking.</p>
                 <p>No refunds for trip payments will be issued for cancellations made after the booking is confirmed.
                 </p>
-                <p>A 10% discount will be applied.</p>
+                <p>An additional 10% discount will be applied.</p>
                 <p>NOTE: Damage deposit will also be due upfront, but will be refunded if you cancel before check-in.
                 </p>
+            </div>
+
+            <div class="booking-panel" id="misc-panel" role="tabpanel" aria-labelledby="misc-tab" tabindex="0"
+                hidden>
+                <ul>
+                    <li>Two-night minimum stay</li>
+                    <li>Pets are allowed, with a maximum of three pets</li>
+                    <li>No smoking, vaping, or e-cigarettes inside; a $250 fine applies if this rule is ignored</li>
+                    <li>Quiet hours are from 10:00 PM to 8:00 AM</li>
+                    <li>Maximum occupancy is 12 guests</li>
+                    <li>Check-in is at 4:00 PM and check-out is at 11:00 AM</li>
+                </ul>
+            </div>
+
+            <div class="booking-panel" id="deposit-panel" role="tabpanel" aria-labelledby="deposit-tab" tabindex="0"
+                hidden>
+                <p><strong>$800 refundable damage deposit</strong></p>
+                <p>The deposit is refunded after your stay, provided there is no damage to the property.</p>
             </div>
         </div>
         <div class="platform-booking">
@@ -1580,7 +1586,7 @@
                     .then(({ fetchUnavailableDates }) => fetchUnavailableDates()
                         .then(dates => {
                             setUnavailableDates(dates);
-                            setStatus('Unavailable dates are red.');
+                            setStatus('Unavailable dates are greyed out.');
                             setIsLoading(false);
                         }))
                     .catch(error => {
@@ -1595,30 +1601,36 @@
                 React.Fragment,
                 null,
                 React.createElement(Calendar, {
-                    minDate: new Date(),
+                    minDate: (() => {
+                        const date = new Date();
+                        date.setHours(0, 0, 0, 0);
+                        return date;
+                    })(),
                     maxDate: (() => {
                         const date = new Date();
                         date.setMonth(date.getMonth() + 18);
                         return date;
                     })(),
                     showNeighboringMonth: false,
+                    defaultView: 'month',
+                    maxDetail: 'month',
+                    minDetail: 'year',
                     tileClassName: ({ date, view }) => {
                         if (view !== 'month') {
                             return null;
                         }
 
-                        const dateKey = calendarDateKey(date);
-                        const classes = [];
-                        if (date.getDay() === 0 || date.getDay() === 6) {
-                            classes.push('weekend-date');
-                        }
-                        if (unavailableDates.has(dateKey)) {
-                            classes.push('unavailable-date');
+                        return unavailableDates.has(calendarDateKey(date)) ? 'unavailable-date' : null;
+                    },
+                    tileDisabled: ({ date, view }) => {
+                        if (isLoading || view !== 'month') {
+                            return isLoading;
                         }
 
-                        return classes.join(' ');
-                    },
-                    tileDisabled: ({ date, view }) => isLoading || (view === 'month' && unavailableDates.has(calendarDateKey(date)))
+                        const today = new Date();
+                        today.setHours(0, 0, 0, 0);
+                        return date < today || unavailableDates.has(calendarDateKey(date));
+                    }
                 }),
                 React.createElement('p', { className: `availability-status${hasError ? ' error' : ''}` }, status)
             );
