@@ -1,0 +1,1062 @@
+{
+  "listingId": "1501508351751467254",
+  "listingUrl": "https://www.airbnb.com/rooms/1501508351751467254",
+  "fetchedAt": "2026-10-10T23:08:09.845Z",
+  "photoCount": 62,
+  "photos": [
+    {
+      "file": "bfd0dbf56c1589f8.jpg",
+      "thumbnails": [
+        {
+          "file": "bfd0dbf56c1589f8-480.webp",
+          "width": 480
+        },
+        {
+          "file": "bfd0dbf56c1589f8-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2697273143",
+      "room": "Living room",
+      "description": "Enjoy family time while watching the deer out the front window, relaxing by the hot fireplace, or watching monster trucks on the giant 85\" HD TV. Turn on the Wii and have a family showdown by playing Mario Cart, Super Smash Bros, Guitar Hero, & more!",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/55a59044-52aa-4196-ab6d-299bd24e0d2b.png"
+    },
+    {
+      "file": "526fc1f69047f47f.jpg",
+      "thumbnails": [
+        {
+          "file": "526fc1f69047f47f-480.webp",
+          "width": 480
+        },
+        {
+          "file": "526fc1f69047f47f-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2697273139",
+      "room": "Living room",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/af59507f-7943-4803-9347-991ddc773ae1.png"
+    },
+    {
+      "file": "7a80130b9a730ef6.jpg",
+      "thumbnails": [
+        {
+          "file": "7a80130b9a730ef6-480.webp",
+          "width": 480
+        },
+        {
+          "file": "7a80130b9a730ef6-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2697273165",
+      "room": "Living room",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/8eaec8fe-b30c-4259-bd06-b47a185c5311.png"
+    },
+    {
+      "file": "15df68f977a535e4.jpg",
+      "thumbnails": [
+        {
+          "file": "15df68f977a535e4-480.webp",
+          "width": 480
+        },
+        {
+          "file": "15df68f977a535e4-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2812537002",
+      "room": "Living room",
+      "description": "4 inch foam mattress, very easy to open/unfold and put away. Linens and pillows stored in nearby hallway closet, in the gray cabinet ️",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/d377cafb-92b9-498f-9b59-be32bc8fdf53.png"
+    },
+    {
+      "file": "ff3d5682f0ea1323.jpg",
+      "thumbnails": [
+        {
+          "file": "ff3d5682f0ea1323-480.webp",
+          "width": 480
+        },
+        {
+          "file": "ff3d5682f0ea1323-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2854282766",
+      "room": "Full kitchen",
+      "description": "Kitchen is stocked with appliances for your cooking needs. Enjoy cooking while surrounded by luxury granite. Full oven, dishwasher, coffee maker, filtered water, electric kettle, instapot, crockpot, blender, toaster, microwave and toaster oven.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/8db5ee9b-5324-4baa-b4a6-b659aef245cf.jpeg"
+    },
+    {
+      "file": "c95d02c02dcd5a42.jpg",
+      "thumbnails": [
+        {
+          "file": "c95d02c02dcd5a42-480.webp",
+          "width": 480
+        },
+        {
+          "file": "c95d02c02dcd5a42-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2854282768",
+      "room": "Full kitchen",
+      "description": "Kitchen has everything you need! Pots, pans, utensils, plates. Microwave, blender, coffee maker, hot water maker, toaster, slow cooker, and more!",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/baf7f522-df78-4c85-9ac1-b7a2fd5e9817.jpeg"
+    },
+    {
+      "file": "4d75a70fe9bd2c4d.jpg",
+      "thumbnails": [
+        {
+          "file": "4d75a70fe9bd2c4d-480.webp",
+          "width": 480
+        },
+        {
+          "file": "4d75a70fe9bd2c4d-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2854282773",
+      "room": "Full kitchen",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/9a09172f-09eb-4a61-b5bf-9b4762edd52a.jpeg"
+    },
+    {
+      "file": "5a63ea81ae61188c.jpg",
+      "thumbnails": [
+        {
+          "file": "5a63ea81ae61188c-480.webp",
+          "width": 480
+        },
+        {
+          "file": "5a63ea81ae61188c-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2384491872",
+      "room": "Full kitchen",
+      "description": "Laundry machine located off the kitchen. Combo washer dryer so you don't have to worry about forgetting to transfer your laundry into the dryer.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/50dfe43b-46b3-4282-8820-192c61681900.jpeg"
+    },
+    {
+      "file": "431bf064309b95a1.jpg",
+      "thumbnails": [
+        {
+          "file": "431bf064309b95a1-480.webp",
+          "width": 480
+        },
+        {
+          "file": "431bf064309b95a1-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844085346",
+      "room": "Dining area",
+      "description": "Spacious seating surrounded by gorgeous vintage lumber. Bathe in the cabin aesthetic while your family eats, laughs, and enjoys each other's company. Break out the playing cards or board games to have a great night of family fun.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/9eb832f0-282e-488c-94fe-43db55179501.jpeg"
+    },
+    {
+      "file": "885ae7b6e283e6a1.jpg",
+      "thumbnails": [
+        {
+          "file": "885ae7b6e283e6a1-480.webp",
+          "width": 480
+        },
+        {
+          "file": "885ae7b6e283e6a1-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844085330",
+      "room": "Dining area",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/df4280a4-b9af-40af-a1e9-b398307b35d2.jpeg"
+    },
+    {
+      "file": "12245c6ed0bfa7f4.jpg",
+      "thumbnails": [
+        {
+          "file": "12245c6ed0bfa7f4-480.webp",
+          "width": 480
+        },
+        {
+          "file": "12245c6ed0bfa7f4-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844085341",
+      "room": "Dining area",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/c9414899-1999-401a-a15b-bc4640dfa30c.jpeg"
+    },
+    {
+      "file": "11c064c41206ad73.jpg",
+      "thumbnails": [
+        {
+          "file": "11c064c41206ad73-480.webp",
+          "width": 480
+        },
+        {
+          "file": "11c064c41206ad73-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2607893832",
+      "room": "Dining area",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/41bab3a9-a240-4c4f-bcd3-fd4c51b11c48.png"
+    },
+    {
+      "file": "49a18c00d4877a59.jpg",
+      "thumbnails": [
+        {
+          "file": "49a18c00d4877a59-480.webp",
+          "width": 480
+        },
+        {
+          "file": "49a18c00d4877a59-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844084673",
+      "room": "Dining area",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/17a9aaff-ffb3-4e4e-bc51-a8250d35e297.jpeg"
+    },
+    {
+      "file": "f32fba0c746c1b9b.jpg",
+      "thumbnails": [
+        {
+          "file": "f32fba0c746c1b9b-480.webp",
+          "width": 480
+        },
+        {
+          "file": "f32fba0c746c1b9b-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844084680",
+      "room": "Dining area",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/68847e94-b5e3-4b0b-a117-016c2eb6066a.jpeg"
+    },
+    {
+      "file": "e4fa82500f4f4a43.jpg",
+      "thumbnails": [
+        {
+          "file": "e4fa82500f4f4a43-480.webp",
+          "width": 480
+        },
+        {
+          "file": "e4fa82500f4f4a43-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844084682",
+      "room": "Dining area",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/5ec5fa1a-4a0b-4d19-a5e9-ed4b90efe150.jpeg"
+    },
+    {
+      "file": "429bec141d4535d7.jpg",
+      "thumbnails": [
+        {
+          "file": "429bec141d4535d7-480.webp",
+          "width": 480
+        },
+        {
+          "file": "429bec141d4535d7-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844084675",
+      "room": "Dining area",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/8549f297-afc6-4ed4-87c0-af3ddc60253b.jpeg"
+    },
+    {
+      "file": "6b9c98f76697355b.jpg",
+      "thumbnails": [
+        {
+          "file": "6b9c98f76697355b-480.webp",
+          "width": 480
+        },
+        {
+          "file": "6b9c98f76697355b-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844088020",
+      "room": "Bedroom 1",
+      "description": "Relax in a spacious bedroom centered around a striking rustic log bed with crisp, clean linens. Beautiful floors, warm bedside lamps, cozy seating, and a ceiling fan complete this comfortable and inviting retreat.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/5a5579ca-c169-4b92-8e8b-3458281de2ef.jpeg"
+    },
+    {
+      "file": "87d3fff0f7b14bf5.jpg",
+      "thumbnails": [
+        {
+          "file": "87d3fff0f7b14bf5-480.webp",
+          "width": 480
+        },
+        {
+          "file": "87d3fff0f7b14bf5-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844087957",
+      "room": "Bedroom 1",
+      "description": "Stay productive at a classic wooden desk featuring a carved chair and bright task lamp. Enjoy working right in front of a large window that offers inspiring, peaceful views of lush evergreen trees and distant mountains.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/52b17c37-6816-4f80-a35f-a9bcfded9cb7.jpeg"
+    },
+    {
+      "file": "5a46978766f9a1f3.jpg",
+      "thumbnails": [
+        {
+          "file": "5a46978766f9a1f3-480.webp",
+          "width": 480
+        },
+        {
+          "file": "5a46978766f9a1f3-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844087960",
+      "room": "Bedroom 1",
+      "description": "Primary bedroom has a private TV, sitting areas, large closet, storage space, and a personal bathroom. Outside, enjoy views of the trees and mountain while you work at the desk.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/994886a8-7330-4221-a013-c35b7f23e759.jpeg"
+    },
+    {
+      "file": "2dbcd893f86d8583.jpg",
+      "thumbnails": [
+        {
+          "file": "2dbcd893f86d8583-480.webp",
+          "width": 480
+        },
+        {
+          "file": "2dbcd893f86d8583-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844087965",
+      "room": "Bedroom 1",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/73bab3d6-b105-4a2b-b7fd-6b7c3084fb55.jpeg"
+    },
+    {
+      "file": "60c3c37d765d9d7a.jpg",
+      "thumbnails": [
+        {
+          "file": "60c3c37d765d9d7a-480.webp",
+          "width": 480
+        },
+        {
+          "file": "60c3c37d765d9d7a-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844087967",
+      "room": "Bedroom 1",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/72ac2c7f-36db-4d64-91dc-90629476d1ac.jpeg"
+    },
+    {
+      "file": "2382d26d2e7ff72e.jpg",
+      "thumbnails": [
+        {
+          "file": "2382d26d2e7ff72e-480.webp",
+          "width": 480
+        },
+        {
+          "file": "2382d26d2e7ff72e-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844087969",
+      "room": "Bedroom 1",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/d9f0479c-a2fd-47dc-81b8-6787c54cf28a.jpeg"
+    },
+    {
+      "file": "7263b5440a5ee760.jpg",
+      "thumbnails": [
+        {
+          "file": "7263b5440a5ee760-480.webp",
+          "width": 480
+        },
+        {
+          "file": "7263b5440a5ee760-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2715415894",
+      "room": "Bedroom 2",
+      "description": "Private bedroom located at the far end of the house. Sleep late with the blackout curtains if you please! Charging stations at each nightstand make using your devices simple and easy.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/0ae28621-ab79-4354-abd9-e000b165d574.jpeg"
+    },
+    {
+      "file": "8bfdd2d7a21a4cab.jpg",
+      "thumbnails": [
+        {
+          "file": "8bfdd2d7a21a4cab-480.webp",
+          "width": 480
+        },
+        {
+          "file": "8bfdd2d7a21a4cab-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844098442",
+      "room": "Bedroom 2",
+      "description": "Plenty of storage for each guest in the closet with a private 40 inch TV to enjoy. Bedroom also has a personal heater to ensure comfort year round.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/669d77e1-4e2e-45c0-8a02-1b15eaff4ff3.png"
+    },
+    {
+      "file": "1f63a6f97e1deedb.jpg",
+      "thumbnails": [
+        {
+          "file": "1f63a6f97e1deedb-480.webp",
+          "width": 480
+        },
+        {
+          "file": "1f63a6f97e1deedb-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844090215",
+      "room": "Bedroom 3",
+      "description": "Private bedroom at the far end of the house. Meetings or computer games a must? We have a desk and monitor set up for you. Just bring your device to plug in.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/164a8f3d-ef29-4df3-8d87-d9564df7406e.jpeg"
+    },
+    {
+      "file": "dd3137f63765d9fe.jpg",
+      "thumbnails": [
+        {
+          "file": "dd3137f63765d9fe-480.webp",
+          "width": 480
+        },
+        {
+          "file": "dd3137f63765d9fe-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844090205",
+      "room": "Bedroom 3",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/f7de3284-d2e3-4d88-8451-8ee8c0b5a9c3.jpeg"
+    },
+    {
+      "file": "a13f5392938e983e.jpg",
+      "thumbnails": [
+        {
+          "file": "a13f5392938e983e-480.webp",
+          "width": 480
+        },
+        {
+          "file": "a13f5392938e983e-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844090216",
+      "room": "Bedroom 3",
+      "description": "Queen bed and large closet with plenty of storage space. Nature views out the windows.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/c1b39b70-9336-4e2b-8d2d-652315844808.jpeg"
+    },
+    {
+      "file": "11d0c04349a2cfe0.jpg",
+      "thumbnails": [
+        {
+          "file": "11d0c04349a2cfe0-480.webp",
+          "width": 480
+        },
+        {
+          "file": "11d0c04349a2cfe0-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844087004",
+      "room": "Bedroom 4",
+      "description": "The upstairs bedroom has a queen bed, futon, TV, extra linens, and a nice view of the backyard's Fir & Larch trees!",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/10762881-8cc9-4b27-af16-8addf39459dc.jpeg"
+    },
+    {
+      "file": "a6e578d64da1a05b.jpg",
+      "thumbnails": [
+        {
+          "file": "a6e578d64da1a05b-480.webp",
+          "width": 480
+        },
+        {
+          "file": "a6e578d64da1a05b-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844087013",
+      "room": "Bedroom 4",
+      "description": "Futon has been extended into a full-sized bed",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/f80f9a57-609f-476e-9666-4654804a2c26.jpeg"
+    },
+    {
+      "file": "b0cd2fde87cfc333.jpg",
+      "thumbnails": [
+        {
+          "file": "b0cd2fde87cfc333-480.webp",
+          "width": 480
+        },
+        {
+          "file": "b0cd2fde87cfc333-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844087021",
+      "room": "Bedroom 4",
+      "description": "Beautiful view out the bedroom's window!",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/6da5be3f-5a13-4978-af9f-614dba7fc978.jpeg"
+    },
+    {
+      "file": "e83a3b93464a3e7a.jpg",
+      "thumbnails": [
+        {
+          "file": "e83a3b93464a3e7a-480.webp",
+          "width": 480
+        },
+        {
+          "file": "e83a3b93464a3e7a-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844087028",
+      "room": "Bedroom 4",
+      "description": "The upstairs bedroom has a queen bed, futon, TV, extra linens, and a nice view of the backyard's Fir & Larch trees!",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/2679d88a-d5b1-4493-a3af-81fc747be96e.jpeg"
+    },
+    {
+      "file": "afbd530c4fbb7048.jpg",
+      "thumbnails": [
+        {
+          "file": "afbd530c4fbb7048-480.webp",
+          "width": 480
+        },
+        {
+          "file": "afbd530c4fbb7048-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844092061",
+      "room": "Full bathroom 1",
+      "description": "Shampoo, conditioner, body wash included!",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/78a2f522-48d9-4364-add2-dfbf8a0e8bb6.jpeg"
+    },
+    {
+      "file": "cff86c24099a6894.jpg",
+      "thumbnails": [
+        {
+          "file": "cff86c24099a6894-480.webp",
+          "width": 480
+        },
+        {
+          "file": "cff86c24099a6894-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844092077",
+      "room": "Full bathroom 1",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/029bfab0-b5c1-4167-9587-f06718bef868.jpeg"
+    },
+    {
+      "file": "5483a42c1af0e5b7.jpg",
+      "thumbnails": [
+        {
+          "file": "5483a42c1af0e5b7-480.webp",
+          "width": 480
+        },
+        {
+          "file": "5483a42c1af0e5b7-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844092084",
+      "room": "Full bathroom 1",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/1ea2669e-8f50-4e04-88ab-bb22a921ada6.jpeg"
+    },
+    {
+      "file": "ea37c5b1cfee543c.jpg",
+      "thumbnails": [
+        {
+          "file": "ea37c5b1cfee543c-480.webp",
+          "width": 480
+        },
+        {
+          "file": "ea37c5b1cfee543c-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844091190",
+      "room": "Full bathroom 2",
+      "description": "Need shampoo, conditioner, or body wash? We've got you covered. Or bring your own toiletries with additional storage attached to the shower head.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/87039905-051c-4c2c-b6fb-432febef47cb.jpeg"
+    },
+    {
+      "file": "bb0483822b35c86c.jpg",
+      "thumbnails": [
+        {
+          "file": "bb0483822b35c86c-480.webp",
+          "width": 480
+        },
+        {
+          "file": "bb0483822b35c86c-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844091193",
+      "room": "Full bathroom 2",
+      "description": "Primary bathroom provides dual sinks with plenty of storage space. Hair dryer included under the sink.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/1b659e75-591c-4444-b350-ffb4b9b281ee.jpeg"
+    },
+    {
+      "file": "a4ee474ca6c375ae.jpg",
+      "thumbnails": [
+        {
+          "file": "a4ee474ca6c375ae-480.webp",
+          "width": 480
+        },
+        {
+          "file": "a4ee474ca6c375ae-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844091207",
+      "room": "Full bathroom 2",
+      "description": "Toilet has an optional bidet attached",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/f5ca2552-fb9b-4fb2-8dd9-fbf02ba38255.jpeg"
+    },
+    {
+      "file": "5a733fa2ddb627a9.jpg",
+      "thumbnails": [
+        {
+          "file": "5a733fa2ddb627a9-480.webp",
+          "width": 480
+        },
+        {
+          "file": "5a733fa2ddb627a9-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844092765",
+      "room": "Full bathroom 3",
+      "description": "LED mirror provides additional light. Vanity provides plenty of storage including a hair dryer under the sink.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/8fdfeaf3-aeae-43d8-a911-974bec45d6ac.jpeg"
+    },
+    {
+      "file": "37bfb8d6309ae4b1.jpg",
+      "thumbnails": [
+        {
+          "file": "37bfb8d6309ae4b1-480.webp",
+          "width": 480
+        },
+        {
+          "file": "37bfb8d6309ae4b1-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844092744",
+      "room": "Full bathroom 3",
+      "description": "Need shampoo, conditioner, or body wash? We've got you covered. Or bring your own toiletries with plenty of storage for your own toiletries along the long shower niche.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/df01f715-d6ed-4ce3-9991-a4b07c5243d1.jpeg"
+    },
+    {
+      "file": "0cd8f00ee8c4a86b.jpg",
+      "thumbnails": [
+        {
+          "file": "0cd8f00ee8c4a86b-480.webp",
+          "width": 480
+        },
+        {
+          "file": "0cd8f00ee8c4a86b-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844104999",
+      "room": "Patio",
+      "description": "Rain or shine seating under a covered roof",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/6fcf66b6-e315-4ab0-b2c6-619f3d51ff50.jpeg"
+    },
+    {
+      "file": "4319bc020cdd8746.jpg",
+      "thumbnails": [
+        {
+          "file": "4319bc020cdd8746-480.webp",
+          "width": 480
+        },
+        {
+          "file": "4319bc020cdd8746-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2607898340",
+      "room": "Front yard",
+      "description": "Enjoy an outdoor fire perfect for smores and hot dogs",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/3df902c8-78c5-4ad2-bf68-50036250756d.png"
+    },
+    {
+      "file": "0ba34d0c692802fe.jpg",
+      "thumbnails": [
+        {
+          "file": "0ba34d0c692802fe-480.webp",
+          "width": 480
+        },
+        {
+          "file": "0ba34d0c692802fe-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844082731",
+      "room": "Front yard",
+      "description": "The road is this way and highlights the seclusion of the property. The huge driveway provides plenty of space to park or turn around",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/7bcb7099-78ad-415c-9990-d88fc0d30ef5.jpeg"
+    },
+    {
+      "file": "bcba8f874498b298.jpg",
+      "thumbnails": [
+        {
+          "file": "bcba8f874498b298-480.webp",
+          "width": 480
+        },
+        {
+          "file": "bcba8f874498b298-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2697263986",
+      "room": "Gym",
+      "description": "Automated garage door allows fresh air into the space and some additional entertainment!",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/549200ef-4132-4a1f-a22d-7f7e5a7fe1c3.png"
+    },
+    {
+      "file": "d6c77201ef53b49e.jpg",
+      "thumbnails": [
+        {
+          "file": "d6c77201ef53b49e-480.webp",
+          "width": 480
+        },
+        {
+          "file": "d6c77201ef53b49e-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2697263989",
+      "room": "Gym",
+      "description": "Hiking didn't fully scratch your activity itch? Have a training plan to stick to? Don't let your vacation stop you. Enjoy the beauty of the epoxy flooring while you work out, or open up the garage to enjoy the outdoor views and fresh air.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/f08ab411-7c8b-4edc-afe1-2b4fa4f47173.png"
+    },
+    {
+      "file": "6d0b36e821954fd5.jpg",
+      "thumbnails": [
+        {
+          "file": "6d0b36e821954fd5-480.webp",
+          "width": 480
+        },
+        {
+          "file": "6d0b36e821954fd5-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2742227384",
+      "room": "Gym",
+      "description": "Unwind in your private, 6-person infrared sauna. Crafted from natural cedar, it offers a rich, soothing aroma as you relax in the heat. Afterward, head upstairs to check out the incredible game room!",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/c2d1ef01-7d50-4162-8934-aba9d1308d22.jpeg"
+    },
+    {
+      "file": "c539f4e261751419.jpg",
+      "thumbnails": [
+        {
+          "file": "c539f4e261751419-480.webp",
+          "width": 480
+        },
+        {
+          "file": "c539f4e261751419-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2326616205",
+      "room": "Exterior",
+      "description": "Your ultimate private getaway! Cabin is set back far from the main road. Long driveway + turnaround also provides plenty of space to get the whole crew in and out. 1.1 acre lot gives lots of room for your great adventure.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/aa1802c9-15b6-4b46-80f0-991f9fec5ad7.jpeg"
+    },
+    {
+      "file": "4ac507977438caf9.jpg",
+      "thumbnails": [
+        {
+          "file": "4ac507977438caf9-480.webp",
+          "width": 480
+        },
+        {
+          "file": "4ac507977438caf9-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2646204920",
+      "room": "Exterior",
+      "description": "Enjoy the mountain view from the private backyard space while you lounge or soak in the hot tub",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/721c22f9-dced-4661-bd20-c7fe8af5f74e.jpeg"
+    },
+    {
+      "file": "d64b75e24cdad854.jpg",
+      "thumbnails": [
+        {
+          "file": "d64b75e24cdad854-480.webp",
+          "width": 480
+        },
+        {
+          "file": "d64b75e24cdad854-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2325444943",
+      "room": "Exterior",
+      "description": "Mountain in the back says Hi! Bring the memories of the summer wildflowers of Paradise back home with you as the yard includes lupine, yarrow, and other wild flowers that bloom seasonally.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/ac2f1953-510d-497a-93ea-1bc579c7ffce.jpeg"
+    },
+    {
+      "file": "878b6ae873b79ed7.jpg",
+      "thumbnails": [
+        {
+          "file": "878b6ae873b79ed7-480.webp",
+          "width": 480
+        },
+        {
+          "file": "878b6ae873b79ed7-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2326617772",
+      "room": "Exterior",
+      "description": "EV charger included! Located by the front door with a Tesla adapter stored inside. EV charging is still limited near Mount Rainier, so it is a great option to be able to charge your EV while you recharge for the next day! ⚡️",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/b8ac4099-43d8-4aed-8619-e078ccd0dbee.jpeg"
+    },
+    {
+      "file": "5a14d5d27c6d53fa.jpg",
+      "thumbnails": [
+        {
+          "file": "5a14d5d27c6d53fa-480.webp",
+          "width": 480
+        },
+        {
+          "file": "5a14d5d27c6d53fa-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2334573235",
+      "room": "Exterior",
+      "description": "Do not be surprised  if you are visited by local deer that commonly roam through the property. They spook easily, so snap your pictures quickly before they dart back into their wooded retreat!",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/fb9b9393-dbfc-45f6-b815-da90728d1e76.jpeg"
+    },
+    {
+      "file": "662cefeb1d82d1db.jpg",
+      "thumbnails": [
+        {
+          "file": "662cefeb1d82d1db-480.webp",
+          "width": 480
+        },
+        {
+          "file": "662cefeb1d82d1db-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2854288608",
+      "room": "Exterior",
+      "description": "Mountain views surround you on this property peaking out above the pine trees.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/e71fd1a0-9a46-4ee7-9317-0de1b6ae8809.jpeg"
+    },
+    {
+      "file": "fdeb059407ddf697.jpg",
+      "thumbnails": [
+        {
+          "file": "fdeb059407ddf697-480.webp",
+          "width": 480
+        },
+        {
+          "file": "fdeb059407ddf697-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2607899896",
+      "room": "Hot tub",
+      "description": "After a long day out exploring nature, take in some bonus mountain views from the hot tub.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/3a52a842-9ca3-4ea8-816a-86de8cba1119.png"
+    },
+    {
+      "file": "1f588548f49f6318.jpg",
+      "thumbnails": [
+        {
+          "file": "1f588548f49f6318-480.webp",
+          "width": 480
+        },
+        {
+          "file": "1f588548f49f6318-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2715447654",
+      "room": "Hot tub",
+      "description": "Slip into the warm, bubbling waters of your private hot tub under a canopy of ambient string lights. Breathe in the crisp night air and soothe tired muscles after a day of exploring, this cozy outdoor retreat is your escape to unwind and disconnect.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/829b2021-6bbb-4eb4-91c7-3dd5e2c0e9c2.jpeg"
+    },
+    {
+      "file": "bdb46a237b740af2.jpg",
+      "thumbnails": [
+        {
+          "file": "bdb46a237b740af2-480.webp",
+          "width": 480
+        },
+        {
+          "file": "bdb46a237b740af2-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2715451146",
+      "room": "Hot tub",
+      "description": "Relax under the covered patio seating and watch the kids enjoy the bubbly waters of the hot tub. Breathe in the crisp night air and enjoy family time! Pop back inside to sit by the fireplace or watch the large TV.",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/2481454d-8f4c-414c-b72a-0580e9408650.jpeg"
+    },
+    {
+      "file": "3a1ce307abd1498b.jpg",
+      "thumbnails": [
+        {
+          "file": "3a1ce307abd1498b-480.webp",
+          "width": 480
+        },
+        {
+          "file": "3a1ce307abd1498b-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2601200788",
+      "room": "Hot tub",
+      "description": "Mountain provides beautiful views from the hot tub, even in the winter!",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/7abc412f-bcd0-48f4-ad0a-af9cadab75fa.jpeg"
+    },
+    {
+      "file": "6fa92611e3819464.jpg",
+      "thumbnails": [
+        {
+          "file": "6fa92611e3819464-480.webp",
+          "width": 480
+        },
+        {
+          "file": "6fa92611e3819464-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2854283652",
+      "room": "Game room 1",
+      "description": "Game on! Play a large variety of retro games including Pac-man, Galaga, DigDug, and Teenage Mutant Ninja Turtles (4 player). Or get your foosball game in and see who comes out victorious!",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/46229a84-f6cd-4e9b-a673-5924e1499627.jpeg"
+    },
+    {
+      "file": "812e3c1bce7a05b0.jpg",
+      "thumbnails": [
+        {
+          "file": "812e3c1bce7a05b0-480.webp",
+          "width": 480
+        },
+        {
+          "file": "812e3c1bce7a05b0-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2854283660",
+      "room": "Game room 1",
+      "description": "Take a seat and watch the kids nearby, or grab the chess set from downstairs to test your wits against your compatriots!",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/f038e429-bfd3-43c4-99dc-af47c5d7e97a.jpeg"
+    },
+    {
+      "file": "3b6212754679f90d.jpg",
+      "thumbnails": [
+        {
+          "file": "3b6212754679f90d-480.webp",
+          "width": 480
+        },
+        {
+          "file": "3b6212754679f90d-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2854283672",
+      "room": "Game room 1",
+      "description": "Bar comes from a Western Larch tree that was felled and processed on the property!  Grab a drink and spectate the friendly competition taking place in the space!",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/67eb4d77-7dc0-4309-a6f7-b2a297049248.jpeg"
+    },
+    {
+      "file": "b62e154a815e5750.jpg",
+      "thumbnails": [
+        {
+          "file": "b62e154a815e5750-480.webp",
+          "width": 480
+        },
+        {
+          "file": "b62e154a815e5750-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2854283702",
+      "room": "Game room 1",
+      "description": "Practice your short game on the putting green while the kids game behind you on the arcade cabinets+foosball table. Place your drinks on the custom-milled bar top, which has wood that was cut and processed on the property!",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/9175d3ff-073e-42db-992d-c72f00b92660.jpeg"
+    },
+    {
+      "file": "0529ac912587786d.jpg",
+      "thumbnails": [
+        {
+          "file": "0529ac912587786d-480.webp",
+          "width": 480
+        },
+        {
+          "file": "0529ac912587786d-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844081324",
+      "room": "Game room 2",
+      "description": "Turn up the fun in this spacious loft game room—perfect for groups and families. Enjoy a full lineup of entertainment including pool, ping pong, air hockey, and an arcade-style basketball game. Watch sports on the TV while you play!",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/b5041d12-e635-4845-9fb6-6bfb217aa84b.jpeg"
+    },
+    {
+      "file": "366eff87522ea28a.jpg",
+      "thumbnails": [
+        {
+          "file": "366eff87522ea28a-480.webp",
+          "width": 480
+        },
+        {
+          "file": "366eff87522ea28a-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844081328",
+      "room": "Game room 2",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/40822af9-92bc-41ce-91e9-f8a0006e6d91.jpeg"
+    },
+    {
+      "file": "4b95623cffec62d6.jpg",
+      "thumbnails": [
+        {
+          "file": "4b95623cffec62d6-480.webp",
+          "width": 480
+        },
+        {
+          "file": "4b95623cffec62d6-800.webp",
+          "width": 800
+        }
+      ],
+      "photoId": "2844081350",
+      "room": "Game room 2",
+      "description": "",
+      "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1501508351751467254/original/c96f8f36-7732-40af-8ad9-b2bd4071b38b.jpeg"
+    }
+  ]
+}
