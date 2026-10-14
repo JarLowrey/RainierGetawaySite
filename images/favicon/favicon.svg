@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Rounded dark slate background tile for high contrast -->
+  <rect width="32" height="32" rx="7" fill="#0F172A"/>
+  
+  <!-- Sleek mountain outline -->
+  <path d="M5 25 L16 8 L27 25 Z" fill="none" stroke="#F8FAFC" stroke-width="2" stroke-linejoin="round"/>
+  
+  <!-- Stylized snow cap -->
+  <path d="M16 8 L20 14 L18.5 15 L22 21 H10 L13.5 15 L12 14 Z" fill="#F8FAFC"/>
+</svg>
